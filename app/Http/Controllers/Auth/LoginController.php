@@ -49,7 +49,7 @@ class LoginController extends Controller
     public function login(Request $request){
         $validate = Validator::make($request->all(),[
             'username' => 'required',
-            'password' => 'required'
+            'password' => 'required|min:3'
         ]);
 
         if(Auth()->attempt(['username' => $request->username , 'password' => $request->password])){
