@@ -8,6 +8,12 @@ Khusus untuk dea, lifos, nando.. silahkan dibaca jika ingin mengerjakan project 
 4. setelah update silahkan masukan perintah untuk memasukan field table ke database dengan menggunakan perintah " php artisan migrate "
 5. Setelah itu silahkan masukan data dummy yang sudah ano buat dengan memasukan perintah " php artisan db:seed "
 6. setelah itu jalankan aplikasinya dengan memasukan perintah " php artisan serve "
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Catatan tambahan :
+1. password sama seperti username
+2. jika ingin memulai coding frontend, silahkan copy template di file template.blade.php (Jangan coding langsung di file tersebut , buat file baru)
+3. Untuk header dan footer coding dibagian layouts/app.blade.php
 
 !! Cara buka websitenya !!
 silahkan masukan di url "localhost:8000"!
