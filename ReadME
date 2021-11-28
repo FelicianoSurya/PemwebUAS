@@ -1,0 +1,17 @@
+Khusus untuk dea, lifos, nando.. silahkan dibaca jika ingin mengerjakan project laravel ketika pertama kali buka
+
+1. Setelah dapat file project jangan lupa untuk memasukan file .env yang sudah feliciano kirim di grup line
+2. Setelah itu buat database di phpmyadmin dengan nama book_hotel (harus sama namanya)
+
+!! PASTIKAN TERMINAL BERADA DIDALAM PROJECT LARAVEL !!
+3. Setelah itu pergi ke terminal kemudian masukan perintah composer update
+4. setelah update silahkan masukan perintah untuk memasukan field table ke database dengan menggunakan perintah " php artisan migrate "
+5. Setelah itu silahkan masukan data dummy yang sudah ano buat dengan memasukan perintah " php artisan db:seed "
+6. setelah itu jalankan aplikasinya dengan memasukan perintah " php artisan serve "
+
+!! Cara buka websitenya !!
+silahkan masukan di url "localhost:8000"!
+
+!! JIKA ADA PERTANYAAN SILAHKAN LANGSUNG DITANYAKAN DI GRUP CHAT !! 
+TERIMA KASIH
+SALAM DARI BINJAI...
