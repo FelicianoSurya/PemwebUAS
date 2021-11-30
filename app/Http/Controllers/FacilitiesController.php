@@ -17,10 +17,13 @@ class FacilitiesController extends Controller
     public function index()
     {
         $params = Fasilities::all();
-        return response($params);
+        // return response($params);
         // return view('listFasilitas',[
         //     'Facilities' => $params
         // ]);
+         return view('user/home',[
+            'facilitylisting' => $params
+        ]);
     }
 
     /**

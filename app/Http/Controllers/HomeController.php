@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fasilities;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.home');
+        // return view('user.home');
+        $params = Fasilities::all();
+        return view('user.home',[
+            'facilities' => $params
+        ]);
     }
 
     public function indexAdmin(){
