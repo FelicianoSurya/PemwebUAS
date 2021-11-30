@@ -1,0 +1,33 @@
+footer{
+    background-color: black;
+}
+
+footer .footer-details .footer-logo{
+    color: white;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+footer .footer-details .footer-logo span{
+    color: #FFB13E;
+}
+
+footer .footer-details .footer-desc{
+    color: white;
+    font-size: 15px;
+}
+
+footer .footer-nav{
+    text-decoration: none;
+    list-style-type: none;
+}
+footer .footer-nav a{
+    color: white;
+
+}
+
+footer .footer-note{
+    margin-top: 25px;
+    font-size: 10px;
+    color: white;
+}

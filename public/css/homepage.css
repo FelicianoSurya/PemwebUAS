@@ -34,6 +34,7 @@
     color: #372074;
     font-size: 70px;
     font-weight: 700;
+    line-height: 60px;
 }
 .section-1 .left-section .title-2{
     color: #CDB9FF;
@@ -47,7 +48,6 @@
 }
 
 .section-2{
-    min-height: 200vh;
 
 }
 
