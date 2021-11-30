@@ -43,8 +43,8 @@
             <div class="card-body">
                 <h5 class="card-title">Anoooooo</h5>
                 <div class="btnCard row justify-content-between">
-                    <a href="#" class="btn btn-primary">Detail</a>
-                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                    <a href="#" class="btn btn-light">Detail</a>
+                    <a href="#" class="btn btn-light">Favorite &hearts;</a>
                 </div>
                 
             </div>
@@ -56,8 +56,8 @@
             <div class="card-body">
                 <h5 class="card-title">Anoooooo</h5>
                 <div class="btnCard row justify-content-between">
-                    <a href="#" class="btn btn-primary">Detail</a>
-                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                    <a href="#" class="btn btn-light">Detail</a>
+                    <a href="#" class="btn btn-light">Favorite &hearts;</a>
                 </div>
                 
             </div>
@@ -69,8 +69,8 @@
             <div class="card-body">
                 <h5 class="card-title">Anoooooo</h5>
                 <div class="btnCard row justify-content-between">
-                    <a href="#" class="btn btn-primary">Detail</a>
-                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                    <a href="#" class="btn btn-light">Detail</a>
+                    <a href="#" class="btn btn-light">Favorite &hearts;</a>
                 </div>
                 
             </div>
@@ -82,8 +82,8 @@
             <div class="card-body">
                 <h5 class="card-title">Anoooooo</h5>
                 <div class="btnCard row justify-content-between">
-                    <a href="#" class="btn btn-primary">Detail</a>
-                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                    <a href="#" class="btn btn-light">Detail</a>
+                    <a href="#" class="btn btn-light">Favorite &hearts;</a>
                 </div>
                 
             </div>
@@ -95,8 +95,8 @@
             <div class="card-body">
                 <h5 class="card-title">Anoooooo</h5>
                 <div class="btnCard row justify-content-between">
-                    <a href="#" class="btn btn-primary">Detail</a>
-                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                    <a href="#" class="btn btn-light">Detail</a>
+                    <a href="#" class="btn btn-light">Favorite &hearts;</a>
                 </div>
                 
             </div>

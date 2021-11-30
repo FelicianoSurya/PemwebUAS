@@ -33,6 +33,9 @@ class HomeController extends Controller
         return view('user.home',[
             'facilities' => $params
         ]);
+        return view('user.facilityDetail',[
+            'facilities' => $params
+        ]);
     }
 
     public function indexAdmin(){
