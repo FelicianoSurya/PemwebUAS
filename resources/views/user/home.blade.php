@@ -40,41 +40,41 @@
     <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
         <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Anoooooo</h5>
+            <a href="#" class="btn btn-primary">Detail</a>
+            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
         </div>
     </div>
     <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
         <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Deaaaaaaa</h5>
+            <a href="#" class="btn btn-primary">Detail</a>
+            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
         </div>
     </div>
     <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
         <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Nandooooo</h5>
+            <a href="#" class="btn btn-primary">Detail</a>
+            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
         </div>
     </div>
     <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
         <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Lifosssss</h5>
+            <a href="#" class="btn btn-primary">Detail</a>
+            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
         </div>
     </div>
     <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
         <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Aaaaaaaa</h5>
+            <a href="#" class="btn btn-primary">Detail</a>
+            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
         </div>
     </div>
     </div>
