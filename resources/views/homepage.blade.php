@@ -36,6 +36,28 @@
                 of space-scheduling problems. ”</span>
     </div>
 </div>
+
+<div class="section-3 py-5 d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img class="w-100"src="https://images.unsplash.com/photo-1638228626087-e7cc19d2ff9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+            </div>
+            <div class="col-6">
+                <h1>About Us</h1>
+                <p>
+                    In 2021, we started building “Booking.” by 
+                    focusing all our efforts on building the 
+                    easiest,  most user-friendly, customizable 
+                    space-booking facility available.
+                </p>
+                <p>A product we would use and one that 
+                    would cater to a wide range of user types.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('custom-js')

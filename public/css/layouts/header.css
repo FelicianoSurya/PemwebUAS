@@ -1,3 +1,20 @@
+.nav-link:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFB13E;
+    transition: 0.2s;
+}
+
+.nav-link:hover:after{
+    width: 100%;
+}
+
+.nav-link:hover{
+    color: #FFB13E;
+}
+
 .ournavbar{
     background-color: rgba(0, 0, 0, 1);
     transition: 0.2s;

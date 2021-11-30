@@ -48,10 +48,15 @@
 }
 
 .section-2{
-
+    background-color: white;
 }
 
 .section-2 span{
     padding: 0 50px;
     font-size: 32px;
+}
+
+.section-3{
+    min-height: 100vh;
+    background-color: #f4f4f4;
 }
