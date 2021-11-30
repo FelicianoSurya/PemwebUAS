@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="section-1 d-flex align-items-center">
+<div class="section-1 d-flex align-items-center" id="landing-page">
     <div class="white-bg"></div>
     <div class="container">
         <div class="row justify-content-around">
@@ -63,10 +63,10 @@
 @section('custom-js')
 <script>
     const headerStyle = document.querySelector("nav");
-    const landingSection = document.querySelector(".section-1");
+    const landingSection = document.querySelector("#landing-page");
     
     const landingOptions = {
-        rootMargin: "-220px 0px 0px 0px"
+        rootMargin: "-120px 0px 0px 0px"
     };
 
     const landingObserver = new IntersectionObserver (function(

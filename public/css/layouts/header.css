@@ -1,3 +1,7 @@
+.nav-link{
+    transition: 0.2s;
+}
+
 .nav-link:after{
     content: '';
     display: block;
@@ -13,6 +17,7 @@
 
 .nav-link:hover{
     color: #FFB13E;
+    transition: 0.2s;
 }
 
 .ournavbar{
