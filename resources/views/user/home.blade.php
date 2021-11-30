@@ -25,56 +25,81 @@
     </div>
 </div> -->
 
-<div class="container">
-    <div class="ataslist row ">
-        <div class="judul col row">
+<div class="container p-3">
+    <div class="ataslist row justify-content-between">
+        <div class="judul col-lg-6 col-md-6 col-12 row ">
             <span style="color: #372074;">Facilities</span>
             <span style="color: #FFB13E;">Listing</span>
         </div>
-        <div class="buttons col row justify-content-end">
-            <button type="button" class="btn btn-light mx-3">Favorite</button>
+        <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
+            <button type="button" class="btn btn-light mx-3">Favorites</button>
             <button type="button" class="btn btn-light">See all</button>
         </div>
     </div>
-    <div class="listfasilitas row justify-content-center mt-5">
-    <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
-        <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Anoooooo</h5>
-            <a href="#" class="btn btn-primary">Detail</a>
-            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+    <div class="listfasilitas row mt-2">
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+        <div class="card p-3">
+            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Anoooooo</h5>
+                <div class="btnCard row justify-content-between">
+                    <a href="#" class="btn btn-primary">Detail</a>
+                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                </div>
+                
+            </div>
         </div>
     </div>
-    <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
-        <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Deaaaaaaa</h5>
-            <a href="#" class="btn btn-primary">Detail</a>
-            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+        <div class="card p-3">
+            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Anoooooo</h5>
+                <div class="btnCard row justify-content-between">
+                    <a href="#" class="btn btn-primary">Detail</a>
+                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                </div>
+                
+            </div>
         </div>
     </div>
-    <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
-        <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Nandooooo</h5>
-            <a href="#" class="btn btn-primary">Detail</a>
-            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+        <div class="card p-3">
+            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Anoooooo</h5>
+                <div class="btnCard row justify-content-between">
+                    <a href="#" class="btn btn-primary">Detail</a>
+                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                </div>
+                
+            </div>
         </div>
     </div>
-    <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
-        <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Lifosssss</h5>
-            <a href="#" class="btn btn-primary">Detail</a>
-            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+        <div class="card p-3">
+            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Anoooooo</h5>
+                <div class="btnCard row justify-content-between">
+                    <a href="#" class="btn btn-primary">Detail</a>
+                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                </div>
+                
+            </div>
         </div>
     </div>
-    <div class="card col-lg-3 col-md-4 col-sm-6 mb-2">
-        <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Aaaaaaaa</h5>
-            <a href="#" class="btn btn-primary">Detail</a>
-            <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+        <div class="card p-3">
+            <img src="https://picsum.photos/200/200" class="card-img-top pt-3" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Anoooooo</h5>
+                <div class="btnCard row justify-content-between">
+                    <a href="#" class="btn btn-primary">Detail</a>
+                    <a href="#" class="btn btn-primary">Favorite &hearts;</a>
+                </div>
+                
+            </div>
         </div>
     </div>
     </div>

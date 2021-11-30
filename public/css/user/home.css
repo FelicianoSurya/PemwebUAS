@@ -1,6 +1,7 @@
 .judul span {
     font-size: 30px;
     font-weight: bold;
+    padding: 5px 10px;
 }
 
 .btn {
@@ -8,4 +9,23 @@
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
     -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.card {
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.card img {
+    border-radius: 0.25rem;
+}
+
+.btnCard a {
+    min-width: 40%;
+}
+
+.buttons button {
+    max-height: 2rem;
+    min-width: 4rem;
 }
