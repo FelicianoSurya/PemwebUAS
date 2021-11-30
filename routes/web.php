@@ -17,9 +17,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'homepage'])->name('home');
 
 Auth::routes();
 Route::get('listFavorite', [UserController::class, 'favoriteList'])->name('listFavorite');
