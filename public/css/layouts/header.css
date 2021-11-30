@@ -5,9 +5,21 @@
 .ournavbar a{
     color: white;
     text-decoration: none!important;
+    font-weight: 700;
+    font-size: 20px;
 }
+.ournavbar .navbar-brand{
+    font-size: 30px;
 
+}
+.ournavbar .navbar-brand span{
+    color: #FFB13E;
+}
 .ournavbar-scrolled {
     background-color: rgba(0, 0, 0, 0);
     transition: 0.2s;
+}
+
+.ournavbar-scrolled .navbar-brand{
+    color: black;
 }

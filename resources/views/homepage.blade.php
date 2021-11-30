@@ -43,7 +43,9 @@
     const headerStyle = document.querySelector("nav");
     const landingSection = document.querySelector(".section-1");
     
-    const landingOptions = {};
+    const landingOptions = {
+        rootMargin: "-220px 0px 0px 0px"
+    };
 
     const landingObserver = new IntersectionObserver (function(
         entries,
