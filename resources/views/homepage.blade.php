@@ -30,9 +30,36 @@
         </div>
     </div>
 </div>
-
+<div class="section-2">
+    <div class="container text-center py-5">
+        <span>“ Our passion is to manage the real-world complexities 
+                of space-scheduling problems. ”</span>
+    </div>
+</div>
 @endsection
 
 @section('custom-js')
-<!-- code js or link js -->
+<script>
+    const headerStyle = document.querySelector("nav");
+    const landingSection = document.querySelector(".section-1");
+    
+    const landingOptions = {};
+
+    const landingObserver = new IntersectionObserver (function(
+        entries,
+        landingObserver
+    ) {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                console.log("entry.target");
+                headerStyle.classList.add("ournavbar-scrolled");
+            }
+            else{
+                headerStyle.classList.remove("ournavbar-scrolled");
+            }
+        })
+    }, landingOptions);
+
+    landingObserver.observe(landingSection);
+</script>
 @endsection

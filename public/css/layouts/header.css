@@ -1,0 +1,13 @@
+.ournavbar{
+    background-color: rgba(0, 0, 0, 1);
+    transition: 0.2s;
+}
+.ournavbar a{
+    color: white;
+    text-decoration: none!important;
+}
+
+.ournavbar-scrolled {
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.2s;
+}

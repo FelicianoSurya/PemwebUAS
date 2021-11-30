@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/layouts/header.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/layouts/footer.css') }}" rel="stylesheet">
+
+
     @yield('custom-css')
 </head>
 <body>
