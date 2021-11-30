@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('listFavorite', [UserController::class, 'favoriteList'])->name('listFavorite');
 
 Route::group(['middleware' => 'auth'],function(){ 
     Route::get('listingFasilitas' , [FacilitiesController::class, 'index'])->name('listFasilitas');

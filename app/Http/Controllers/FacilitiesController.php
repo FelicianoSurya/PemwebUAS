@@ -45,7 +45,7 @@ class FacilitiesController extends Controller
             'fasilityID' => 'required|unique:fasilities',
             'fasilityName' => 'required',
             'description' => 'required',
-            'image' => 'required'
+            'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
         ]);
 
         if($validate->fails()){
@@ -106,10 +106,18 @@ class FacilitiesController extends Controller
             return response(['message' => 'Tidak ada data']);
         }
 
-        $validate = Validator::make($request->all(),[
-            'fasilityName' => 'required',
-            'description' => 'required',
-        ]);
+        if($request->hasFile('image')){
+            $validate = Validator::make($request->all(),[
+                'fasilityName' => 'required',
+                'description' => 'required',
+                'image' => 'require|mimes:jpeg,jpg,png,gif|max:2048'
+            ]);    
+        }else{
+            $validate = Validator::make($request->all(),[
+                'fasilityName' => 'required',
+                'description' => 'required',
+            ]);
+        }
 
         if($validate->fails()){
             return response(['message' => 'Update Fasilitas Gagal!']);

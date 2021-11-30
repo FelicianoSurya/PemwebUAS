@@ -56,6 +56,9 @@ class BookingController extends Controller
         $booking = Booking::all();
 
         foreach($booking as $data){
+            if($request->startTime > $request->endTime){
+                return response(['message' => 'Tidak bisa booking! Waktunya tidak valid!']);
+            }
             if($data['bookingDate'] == $request->bookingDate && $data['fasilityID'] == $request->fasilityID){
                 if($request->startTime <= $data['startTime'] && $request->endTime > $data['startTIme'] || $request->startTime > $data['startTime'] && $request->startTime < $data['endTime']){
                     return response(['message' => 'Tidak Bisa Booking! Sudah Ada yang isi']);

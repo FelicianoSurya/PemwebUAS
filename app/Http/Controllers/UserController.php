@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\Favorite;
 
 class UserController extends Controller
 {
@@ -37,11 +38,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = Validator::make($request->all(),[
-            'username' => 'required|string|unique:users',
-            'password' => 'required|string|min:2',
-            'name' => 'required'
-        ]);
+        if($request->hasFile('image')){
+            $validate = Validator::make($request->all(),[
+                'username' => 'required|string|unique:users',
+                'password' => 'required|string|min:2',
+                'name' => 'required',
+                'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
+            ]);
+        }else{
+            $validate = Validator::make($request->all(),[
+                'username' => 'required|string|unique:users',
+                'password' => 'required|string|min:2',
+                'name' => 'required'
+            ]);
+        }
 
         if($validate->fails()){
             return response(['message' => 'gagal tambah management!']);
@@ -153,5 +163,23 @@ class UserController extends Controller
         }else{
             return response(['message' => 'Akun management Tidak ada!']);
         }
+    }
+
+    public function addFavorite(Request $request){
+        Favorite::create([
+            'fasilityID' => $request->fasilityID,
+            'userID' => $request->userID
+        ]);
+
+        return response(['message' => 'Add Favorite Berhasil']);
+    }
+
+    public function favoriteList(){
+        $userID = auth()->user()->id;
+        
+        $favorites = Favorite::where('userID',$userID)->get();
+
+        return response($favorites);
+
     }
 }
