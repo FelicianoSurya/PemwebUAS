@@ -1,0 +1,47 @@
+.section-1{
+    min-height: 100vh;
+    position: relative;
+    background-image: url('../images/landingpage/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-1 .white-bg{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.9;
+}
+
+.section-1 .black-line-welcome-section{
+    margin-top: 160px;
+    width: 90px;
+    height: 2px;
+    background-color: black;
+}
+
+.section-1 .left-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.section-1 .left-section .title-1{
+    color: #372074;
+    font-size: 70px;
+    font-weight: 700;
+}
+.section-1 .left-section .title-2{
+    color: #CDB9FF;
+    font-size: 70px;
+    font-weight: 700;
+}
+.section-1 .left-section .sub{
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+}
