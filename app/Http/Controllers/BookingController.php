@@ -50,24 +50,31 @@ class BookingController extends Controller
         ]);
 
         if($validate->fails()){
-            return response(['message' => 'Tidak Bisa Booking!']);
+            $request->session()->flash('validate','failed'); 
+            return back()->withErrors($validate);
         }
 
         $booking = Booking::all();
 
         foreach($booking as $data){
-            if($request->startTime > $request->endTime){
-                return response(['message' => 'Tidak bisa booking! Waktunya tidak valid!']);
+            if($request->startTime > $request->endTime && $request->startTime == $request->endTime){
+                // return response(['message' => 'Tidak bisa booking! Waktunya tidak valid!']);
+                $request->session()->flash('status','invalid');
+                return back();
             }
             if($data['bookingDate'] == $request->bookingDate && $data['fasilityID'] == $request->fasilityID){
                 if($request->startTime <= $data['startTime'] && $request->endTime > $data['startTIme'] || $request->startTime > $data['startTime'] && $request->startTime < $data['endTime']){
-                    return response(['message' => 'Tidak Bisa Booking! Sudah Ada yang isi']);
+                    // return response(['message' => 'Tidak Bisa Booking! Sudah Ada yang isi']);
+                    $request->session()->flash('status','crash');
+                    return back();
                 }
             }
 
             if($data['userID'] == $request->userID && $data['bookingDate'] == $request->bookingDate){
                 if($request->startTime <= $data['startTime'] && $request->endTime > $data['startTIme'] || $request->startTime > $data['startTime'] && $request->startTime < $data['endTime']){
-                    return response(['message' => 'Tidak Bisa Booking! Anda Sudah memiliki jadwal diwaktu yang sama!']);
+                    // return response(['message' => 'Tidak Bisa Booking! Anda Sudah memiliki jadwal diwaktu yang sama!']);
+                    $request->session()->flash('status','already');
+                    return back();
                 }
             }
         }
@@ -79,8 +86,10 @@ class BookingController extends Controller
             'endTime' => $request->endTime,
             'userID' => $request->userID,
         ]);
-        
-        return response(['message' => 'berhasil memboking fasilitas!']);
+   
+        // return response(['message' => 'berhasil memboking fasilitas!']);
+        $request->session()->flash('status','success');
+        return back();
     }
 
     /**

@@ -30,7 +30,7 @@ Route::group(['middleware' => 'auth'],function(){
     
     Route::group(['middleware' => 'user'],function(){
         Route::get('/home', [HomeController::class, 'index'])->name('home');
-        Route::resource('booking', BookingController::class);
+        Route::post('bookingAdd',[BookingController::class, 'store'])->name('bookingAdd');
         Route::get('/home/fasility/{id}', [FacilitiesController::class, 'show'])->name('facilityDetail');
     });
 
