@@ -26,6 +26,18 @@ class FacilitiesController extends Controller
         ]);
     }
 
+    public function adminFacility()
+    {
+        $params = Fasilities::all();
+        // return response($params);
+        // return view('listFasilitas',[
+        //     'Facilities' => $params
+        // ]);
+         return view('admin/listFacility',[
+            'facilitylisting' => $params
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

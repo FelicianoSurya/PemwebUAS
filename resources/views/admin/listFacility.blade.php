@@ -8,7 +8,7 @@
 <div class="container pt-5">
         <div class="ataslist row justify-content-between py-5">
             <div class="judul col-lg-6 col-md-6 col-12 row ">
-                <span style="color: #372074;">User</span>
+                <span style="color: #372074;">Facilities</span>
                 <span style="color: #FFB13E;">Listing</span>
             </div>
             <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
@@ -21,18 +21,16 @@
             <thead>
                 <tr class="text-center">
                     <th>No</th>
+                    <th>Image</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
                     <th>Operation</th>
                 </tr>
             </thead>
             <tbody>
                     <tr class="text-center">
                         <td>1</td>
-                        <td>Anooo</td>
-                        <td>ano@dea.com</td>
-                        <td>Manager</td>
+                        <td><img src="https://picsum.photos/300/200" alt=""></td>
+                        <td>basket</td>
                         <td>
                             <div class="d-flex justify-content-center operation">
                                 <form href="">
@@ -57,10 +55,10 @@
 @endsection
 
 @section('custom-js')
-<script>
+<script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
-    $('#example').DataTable();
-    } );
+	$('#example').dataTable();
+ } );
 </script>
     
 @endsection
