@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'],function(){
         Route::get('/adminHome',[HomeController::class, 'indexAdmin'])->name('homeAdmin');
         Route::resource('management', UserController::class);
         Route::delete('booking/{id}', [BookingController::class, 'destroy']);
+        Route::get('/usertable',[UserController::class, 'userTable'])->name('userTable');
     });
 
     Route::group(['middleware' => 'management'],function(){

@@ -182,4 +182,8 @@ class UserController extends Controller
         return response($favorites);
 
     }
+
+    public function userTable(){
+        return view('user.userTable');
+    }
 }
