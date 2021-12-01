@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'],function(){
         Route::get('/adminHome',[HomeController::class, 'indexAdmin'])->name('homeAdmin');
         Route::resource('management', UserController::class);
         Route::delete('booking/{id}', [BookingController::class, 'destroy']);
+        Route::get('/listFacility',[FacilitiesController::class, 'adminFacility'])->name('listFacility');
     });
 
     Route::group(['middleware' => 'management'],function(){
