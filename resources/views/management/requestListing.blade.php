@@ -66,6 +66,12 @@
                                       <img src="{{asset('images/table/cross.svg')}}" alt="">
                                     </button>
                                 </form>
+                                <form href="">
+                                    <input type="hidden" name="button" value="delete">
+                                    <button>
+                                      <img src="{{asset('images/table/delete.svg')}}" alt="">
+                                    </button>
+                                </form>
                             </div>
                             @else
                             Done
