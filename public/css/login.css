@@ -16,3 +16,23 @@
 .loginContainer {
     min-height: 80vh;
 }
+
+input[type="file"] {
+    border: none;
+}
+
+.isilogin {
+    min-width: 50%;
+}
+
+@media (max-width: 768px) {
+    .isilogin {
+        min-width: 75%;
+    }
+}
+
+@media (max-width: 576px) {
+    .isilogin {
+        width: 100%;
+    }
+}

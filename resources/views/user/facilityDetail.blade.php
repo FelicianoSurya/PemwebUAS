@@ -5,6 +5,83 @@
 @endsection
 
 @section('content')
+<div class="modal" style="background-color:rgba(0,0,0,0.5);" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width:100%;margin-top:50px">	
+        <div class="modal-content p-4">
+            <div class="modal-header">
+            <h4 class="modal-title" style="display:flex;justify-content:center; width:100%"><span style="margin-right:5px;color:#372074;">Booking</span><span class="ms-4" style="color:#FFB13E">Form</span></h4>
+            </div>
+            <div class="modal-body">
+            <form method="POST" action="{{ route('bookingAdd') }}">
+                @csrf
+                <input type="hidden" name="userID" value="{{ Auth()->user()->id }}">
+                <div class="form-group row flex-column">
+                    <label for="fasilityID" class="col-md-12 col-form-label">{{ __('Fasility ID') }}</label>
+
+                    <div class="col-md-12">
+                        <input id="fasilityID" disabled type="text" class="form-control" name="fasilityID" value="{{ $fasility['fasilityID'] }}" required  autofocus>
+                        <input id="fasilityID" type="hidden" class="form-control" name="fasilityID" value="{{ $fasility['id'] }}">
+                    </div>
+                </div>
+
+                <div class="form-group row flex-column">
+                    <label for="date" class="col-md-12 col-form-label">{{ __('Reservation Date') }}</label>
+
+                    <div class="col-md-12">
+                        <input id="bookingDate" type="date" class="form-control @error('date') is-invalid @enderror" name="bookingDate" required>
+
+                        @error('bookingDate')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group row flex-column">
+                    <label for="start" class="col-md-12 col-form-label">{{ __('Start Time') }}</label>
+
+                    <div class="col-md-12">
+                        <input id="startTime" type="time" class="form-control @error('startTime') is-invalid @enderror" name="startTime" required>
+
+                        @error('startTime')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group row flex-column">
+                    <label for="endTime" class="col-md-12 col-form-label">{{ __('End Time') }}</label>
+
+                    <div class="col-md-12">
+                        <input id="endTime" type="time" class="form-control @error('date') is-invalid @enderror" name="endTime" required>
+
+                        @error('endTime')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group modal-btn row justify-content-end align-items-end mb-0">
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-light px-4">
+                            {{ __('Book') }}
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-danger" class="close" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="container pt-5">
         <div class="ataslist row justify-content-between py-5">
             <div class="judul col-lg-6 col-md-6 col-12 row ">
@@ -35,5 +112,25 @@
 @endsection
 
 @section('custom-js')
-<!-- code js or link js -->
+<script>
+    $(document).ready(function(){
+        $('#btn-booked').click(function(){
+            $('#myModal').modal({
+            keyboard: false,
+            show: true,
+            backdrop: 'static'
+        	});
+        })
+    })
+    @if(session('validate')){
+        $(document).ready(function(){
+            $('#myModal').modal({
+            keyboard: false,
+            show: true,
+            backdrop: 'static'
+        	});
+        });
+    }
+    @endif
+</script>
 @endsection
