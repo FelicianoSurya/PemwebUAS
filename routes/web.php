@@ -28,7 +28,6 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('listingFasilitas' , [FacilitiesController::class, 'index'])->name('listFasilitas');
     Route::get('listingBooking' , [BookingController::class, 'index'])->name('listBooking');
     
-    
     Route::group(['middleware' => 'user'],function(){
         Route::get('/home', [HomeController::class, 'index'])->name('home');
         Route::resource('booking', BookingController::class);

@@ -17,28 +17,28 @@ class UserSeeder extends Seeder
         $user = [
             [
                 'name' => 'Admin',
-                'username' => 'admin',
+                'email' => 'admin@admin.com',
                 'password' => bcrypt('admin'),
                 'role' => 'admin',
                 'image' => 'user.jpg'
             ],
             [
                 'name' => 'John',
-                'username' => 'john',
+                'email' => 'john@user.com',
                 'password' => bcrypt('john'),
                 'role' => 'user',
                 'image' => 'user.jpg',
             ],
             [
                 'name' => 'Kevin',
-                'username' => 'kevin',
+                'email' => 'kevin@user.com',
                 'password' => bcrypt('kevin'),
                 'role' => 'user',
                 'image' => 'laki.jpg',
             ],
             [
                 'name' => 'Nina',
-                'username' => 'nina',
+                'email' => 'nina@user.com',
                 'password' => bcrypt('nina'),
                 'role' => 'user',
                 'image' => 'perempuan.jpg'

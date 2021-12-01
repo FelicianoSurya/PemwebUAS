@@ -37,7 +37,7 @@
     </div>
 </div>
 
-<div class="section-3 py-5 d-flex align-items-center">
+<div class="section-3 py-5 d-flex align-items-center" id="aboutus">
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -97,7 +97,7 @@
     </div>
 </div>
 
-<div class="section-6 py-5">
+<div class="section-6 py-5" id="team">
     <div class="container">
         <div class="section-6-header text-center pb-4">
         Our Team

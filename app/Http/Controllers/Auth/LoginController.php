@@ -36,10 +36,6 @@ class LoginController extends Controller
      *
      * @return void
      */
-
-    public function username(){
-        return 'username';
-    }
     
     public function __construct()
     {
@@ -48,11 +44,15 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $validate = Validator::make($request->all(),[
-            'username' => 'required',
+            'email' => 'required|email',
             'password' => 'required|min:3'
         ]);
 
-        if(Auth()->attempt(['username' => $request->username , 'password' => $request->password])){
+        if($validate->fails()){
+            return back()->withErrors($validate);
+        }
+
+        if(Auth()->attempt(['email' => $request->email , 'password' => $request->password])){
             if(Auth()->user()->role == 'admin'){
                 return redirect()->route('homeAdmin');
             }elseif(Auth()->user()->role == 'management'){
@@ -61,7 +61,7 @@ class LoginController extends Controller
                 return redirect()->route('home');
             }
         }else{
-            return back()->with('error', 'Email atau Password Salah!');
+            return back()->withErrors(['invalid' => 'Email atau Password Salah!']);
         }
 
     }

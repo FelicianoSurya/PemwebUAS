@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container loginContainer d-flex align-items-center justify-content-center">
-    <div class="row justify-content-center">
+    <div class="row w-50 justify-content-center">
         <div class="col-md-12">
             <div class="card p-3">
                 <div class="card-header text-center">{{ __('Login') }}</div>
@@ -16,12 +16,12 @@
                         @csrf
 
                         <div class="form-group row flex-column">
-                            <label for="username" class="col-md-4 col-form-label">{{ __('Username') }}</label>
+                            <label for="email" class="col-md-4 col-form-label">{{ __('Email') }}</label>
 
                             <div class="col-md-12">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required  autofocus>
+                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required  autofocus>
 
-                                @error('username')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -49,6 +49,13 @@
                                     {{ __('Login') }}
                                 </button>
                             </div>
+                            @if($errors->any())
+                                <div class="col-12 d-flex justify-content-center pt-3">
+                                    @error('invalid')
+                                    <p class="text-danger fw-bolder">{{$errors->first()}}</p>
+                                    @enderror
+                                </div>
+                            @endif
                             <div class="col-md-12 d-flex text-center flex-column pt-3">
                                 <span>Don't have an acccount?</span>
                                 <span>

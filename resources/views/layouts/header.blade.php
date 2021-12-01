@@ -17,15 +17,20 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ route('homepage') }}">{{ __('Home') }}</a>
+                    </li>
+                    
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#aboutus">{{ __('About Us') }}</a>
+                    </li>
+                    
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#team">{{ __('Our Team ') }}</a>
+                    </li>
                     @if (Route::has('login'))
-                        <li class="nav-item">
+                        <li class="nav-item px-3">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else

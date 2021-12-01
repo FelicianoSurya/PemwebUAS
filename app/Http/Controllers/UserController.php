@@ -42,14 +42,14 @@ class UserController extends Controller
     {
         if($request->hasFile('image')){
             $validate = Validator::make($request->all(),[
-                'username' => 'required|string|unique:users',
+                'email' => 'required|string|unique:users',
                 'password' => 'required|string|min:2',
                 'name' => 'required',
                 'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
             ]);
         }else{
             $validate = Validator::make($request->all(),[
-                'username' => 'required|string|unique:users',
+                'email' => 'required|string|unique:users',
                 'password' => 'required|string|min:2',
                 'name' => 'required'
             ]);
@@ -68,7 +68,7 @@ class UserController extends Controller
 
             User::create([
                 'name' => $request->name,
-                'username' => $request->username,
+                'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'role' => 'management',
                 'image' => $image_name
@@ -76,7 +76,7 @@ class UserController extends Controller
         }else{
             User::create([
                 'name' => $request->name,
-                'username' => $request->username,
+                'username' => $request->email,
                 'password' => bcrypt($request->password),
                 'role' => 'management',
             ]);  
