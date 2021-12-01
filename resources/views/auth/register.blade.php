@@ -47,7 +47,7 @@
                             <label for="image" class="col-md-5 col-form-label">{{ __('Profile Picture') }}</label>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="file" placeholder="Profile Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="email" value="{{ old('image') }}" required />
+                                <input class="form-control" type="file" placeholder="Profile Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="Profile Picture" value="{{ old('image') }}" required />
 
 
                                 @error('image')
