@@ -1,0 +1,18 @@
+.card-header {
+    font-size: 32px;
+    font-weight: bold;
+    color: #372074;
+    background-color: transparent;
+    border-bottom: transparent;
+}
+
+.btn {
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.loginContainer {
+    min-height: 80vh;
+}
