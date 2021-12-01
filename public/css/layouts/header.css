@@ -45,3 +45,14 @@
 .ournavbar-scrolled .navbar-brand{
     color: black;
 }
+
+@media(max-width:991px){
+    .ournavbar-scrolled {
+        background-color: rgba(255, 255, 255, 0.6);
+        transition: 0.2s;
+    }
+
+    .ournavbar-scrolled .nav-link{
+        color: black!important;
+    }
+}

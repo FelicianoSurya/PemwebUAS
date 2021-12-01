@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-md ournavbar ">
+<nav class="navbar fixed-top navbar-expand-md ournavbar navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             B<span>oo</span>kCourts.
