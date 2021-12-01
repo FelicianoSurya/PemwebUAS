@@ -57,6 +57,63 @@
 }
 
 .section-3{
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #f4f4f4;
+}
+
+.section-3 h1{
+    font-size: 44px;
+}
+
+.section-3 p{
+    font-size: 18px;
+}
+
+.section-4{
+    background-color: white;
+}
+
+.section-4-header{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.section-5{
+    background-color: #f4f4f4;
+}
+
+.section-5-header{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.section-5 .content-text-or{
+    font-size: 27px;
+}
+
+.section-5 .btn {
+    padding: 10px 25px;
+    font-size: 27px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.section-6{
+    background-color: white;
+}
+
+.section-6-header{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.section-6 .ourteam-card{
+    background-color: #F7F7F7;
+    border-radius: 20px;
+    box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.36);
+-webkit-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.36);
+-moz-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.36);
+    padding: 20px;
 }
