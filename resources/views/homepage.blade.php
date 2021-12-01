@@ -6,44 +6,44 @@
 
 @section('content')
 
-<div class="section-1 d-flex align-items-center" id="landing-page">
+<div class="section-1 d-flex align-items-lg-center align-items-end" id="landing-page">
     <div class="white-bg"></div>
     <div class="container">
-        <div class="row justify-content-around">
-            <div class="col-5 left-section">
-                <div class="text-content d-flex flex-column ">
-                    <span class="title-1">Booking</span>
-                    <span class="title-2">Facility</span>
+        <div class="row justify-content-start align-items-end">
+            <div class="col-lg-5 col-12 left-section">
+                <div class="text-content d-flex flex-column justify-content-center align-items-lg-start align-items-center">
+                    <div class="d-flex flex-lg-column flex-row  justify-content-center">
+                        <span class="title-1 p-lg-0 p-2">Booking</span>
+                        <span class="title-2 p-lg-0 p-2">Facility</span>
+                    </div>
+                    
                     <span class="sub">
                         Discover a better way 
                         to schedule facilities.
                     </span>
                 </div>
-                <div class="black-line-welcome-section">
+                <div class="black-line-welcome-section mx-auto">
 
                 </div>
-
-            </div>
-            <div class="col-5">
 
             </div>
         </div>
     </div>
 </div>
 <div class="section-2">
-    <div class="container text-center py-5">
-        <span>“ Our passion is to manage the real-world complexities 
+    <div class="container  py-5">
+        <span class="">“ Our passion is to manage the real-world complexities 
                 of space-scheduling problems. ”</span>
     </div>
 </div>
 
 <div class="section-3 py-5 d-flex align-items-center" id="aboutus">
     <div class="container">
-        <div class="row">
-            <div class="col-6">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 py-3 col-6 d-flex  align-items-center">
                 <img class="w-100"src="https://images.unsplash.com/photo-1638228626087-e7cc19d2ff9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
             </div>
-            <div class="col-6 d-flex flex-column justify-content-around container">
+            <div class="col-lg-6 col-12 text-lg-left d-flex flex-column justify-content-around container">
                 <h1>About Us</h1>
                 <p>
                     In 2021, we started building “Booking.” by 
@@ -64,18 +64,20 @@
         <div class="section-4-header text-center pb-4">
         The benefits of using <br>BookCourts.
         </div>
-        <div class="row justify-content-between">
-            <div class="col-3 d-flex text-center flex-column align-items-center">
+        <div class="row justify-content-sm-between justify-content-center">
+            <div class=" col-lg-3 col-sm-4 col-8  d-flex text-center flex-column  align-items-center">
                 <img class="w-100 pb-3" src="https://images.unsplash.com/photo-1638228626094-20fbdb215149?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1184&q=80" alt="">
                 <h3>Untangle space usage</h3>
                 <p>Solve your space management problems forever by taking your booking processes online</p>
             </div>
-            <div class="col-3 d-flex text-center flex-column align-items-center">
+            <div class="w-100 d-sm-none d-block"></div>
+            <div class="col-lg-3 col-sm-4 col-8  d-flex text-center flex-column  align-items-center">
                 <img class="w-100 pb-3" src="https://images.unsplash.com/photo-1638228626094-20fbdb215149?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1184&q=80" alt="">
                 <h3>Reduce administration</h3>
                 <p>Save time and money by automating previously time-consuming space management tasks.</p>
             </div>
-            <div class="col-3 d-flex text-center flex-column align-items-center">
+            <div class="w-100 d-sm-none d-block"></div>
+            <div class="col-lg-3 col-sm-4 col-8  d-flex text-center flex-column  align-items-center">
                 <img class="w-100 pb-3" src="https://images.unsplash.com/photo-1638228626094-20fbdb215149?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1184&q=80" alt="">
                 <h3>Implement quickly</h3>
                 <p>Getting up and running is easier than you think. Start seeing results in minutes.</p>
@@ -90,9 +92,11 @@
         Let's Get Started
         </div>
         <div class="row justify-content-center">
-            <div class="col-3 text-right"><a href="{{ route('login') }}"><button class="btn btn-light">Login</button></a></div>
+            <div class="col-3 d-flex justify-content-md-end justify-content-center "><a href="{{ route('login') }}"><button class="btn btn-light">Login</button></a></div>
+            <div class="w-100 d-sm-none d-block"></div>
             <div class="col-1 d-flex justify-content-center align-items-center content-text-or">or</div>
-            <div class="col-3 text-left"><a href="{{ route('register') }}"><button class="btn btn-light">Register</button></a></div>
+            <div class="w-100 d-sm-none d-block"></div>
+            <div class="col-3 d-flex justify-content-md-start justify-content-center text-left"><a href="{{ route('register') }}"><button class="btn btn-light">Register</button></a></div>
         </div>
     </div>
 </div>
@@ -103,25 +107,25 @@
         Our Team
         </div>
         <div class="row justify-content-center">
-            <div class="col-3 p-2">
+            <div class="col-lg-3 col-sm-6 col-8 p-2">
                 <div class="ourteam-card text-center">
                     <h3>Feliciano</h3>
                     <p class="m-0">( 000 000 43255 )</p>
                 </div>
             </div>
-            <div class="col-3 p-2">
+            <div class="col-lg-3 col-sm-6 col-8 p-2">
                 <div class="ourteam-card text-center">
                     <h3>Feliciano</h3>
                     <p class="m-0">( 000 000 43255 )</p>
                 </div>
             </div>
-            <div class="col-3 p-2">
+            <div class="col-lg-3 col-sm-6 col-8 p-2">
                 <div class="ourteam-card text-center">
                     <h3>Feliciano</h3>
                     <p class="m-0">( 000 000 43255 )</p>
                 </div>
             </div>
-            <div class="col-3 p-2">
+            <div class="col-lg-3 col-sm-6 col-8 p-2">
                 <div class="ourteam-card text-center">
                     <h3>Feliciano</h3>
                     <p class="m-0">( 000 000 43255 )</p>
