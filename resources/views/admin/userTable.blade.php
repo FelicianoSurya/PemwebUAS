@@ -34,7 +34,7 @@
                         <td>ano@dea.com</td>
                         <td>Manager</td>
                         <td>
-                            <div class="d-flex justify-content-around operation">
+                            <div class="d-flex justify-content-center operation">
                                 <form href="">
                                     <input type="hidden" name="button" value="Edit">
                                     <button>
