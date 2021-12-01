@@ -24,7 +24,6 @@ Route::get('/', function(){
 Auth::routes();
 
 Route::group(['middleware' => 'auth'],function(){ 
-    Route::get('listingFasilitas' , [FacilitiesController::class, 'index'])->name('listFasilitas');
     
     Route::group(['middleware' => 'user'],function(){
         Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -40,13 +39,14 @@ Route::group(['middleware' => 'auth'],function(){
         Route::resource('management', UserController::class);
         Route::resource('admin/facilities', FacilitiesController::class);
         Route::delete('booking/{id}', [BookingController::class, 'destroy']); 
-        Route::get('requestListing' , [BookingController::class, 'index'])->name('requestListing');
+        Route::get('requestListing' , [BookingController::class, 'index'])->name('requestListingAdmin');
+        Route::get('requestWaiting' , [BookingController::class, 'indexWaiting'])->name('requestListingWaiting');
     });
     
     Route::group(['middleware' => 'management'],function(){
         Route::get('/managementHome',[HomeController::class, 'indexManagement'])->name('homeManagement');
         Route::resource('facilities', FacilitiesController::class);
-        Route::get('requestListing' , [BookingController::class, 'index'])->name('requestListing');
+        // Route::get('requestListing' , [BookingController::class, 'index'])->name('requestListing');
         Route::put('booking/approved/{id}', [BookingController::class, 'approved']);
         Route::put('booking/rejected/{id}', [BookingController::class, 'rejected']);
     });

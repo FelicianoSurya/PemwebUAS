@@ -13,6 +13,7 @@
 
 .operation form button {
     border: none;
+    background-color: transparent;
 }
 
 .operation form img {

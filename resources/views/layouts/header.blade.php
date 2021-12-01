@@ -59,7 +59,7 @@
                             <a class="nav-link" href="{{ url('admin/facilities') }}">{{ __('Facilities') }}</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="">{{ __('Requests') }}</a>
+                            <a class="nav-link" href="{{ route('requestListingAdmin') }}">{{ __('Requests') }}</a>
                         </li>
                     @endif
                     <li class="nav-item dropdown">

@@ -16,7 +16,16 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $params = booking::with(['user','fasility'])->get();
+        $params = booking::with(['user','fasility'])->paginate(4);
+        // return response($params);
+        return view('management.requestListing',[
+            'bookings' => $params
+        ]);
+    }
+    
+    public function indexWaiting()
+    {
+        $params = booking::with(['user','fasility'])->where('status','waiting')->paginate(4);
         // return response($params);
         return view('management.requestListing',[
             'bookings' => $params

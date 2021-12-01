@@ -12,8 +12,8 @@
                 <span style="color: #FFB13E;">Listing</span>
             </div>
             <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
-                <a href="{{ route('requestListingWaiting') }}"><button type="button" class="btn btn-light mx-3">Waiting</button></a>
-                <a href="{{ route('requestListingAdmin') }}"><button type="button" class="btn btn-light mx-3">All Request</button></a>
+                <button type="button" class="btn btn-light mx-3">Waiting</button>
+                <button type="butotn" class="btn btn-light mx-3">All Request</button>
             </div>
         </div>
     </div>
@@ -55,13 +55,13 @@
                             @if($booking['status'] == 'waiting')
                             <div class="d-flex justify-content-center align-items-center operation">
                                 <form href="">
-                                    <input type="hidden" name="id" value="{{ $booking['id'] }}">
+                                    <input type="hidden" name="button" value="Edit">
                                     <button>
                                       <img src="{{asset('images/table/check.svg')}}" alt="">
                                     </button>
                                 </form>
                                 <form href="">
-                                    <input type="hidden" name="button" value="rejected">
+                                    <input type="hidden" name="button" value="Delete">
                                     <button>
                                       <img src="{{asset('images/table/cross.svg')}}" alt="">
                                     </button>

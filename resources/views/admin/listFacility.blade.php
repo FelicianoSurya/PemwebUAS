@@ -20,34 +20,40 @@
         <table id="example" class="w-100 table table-striped " style="width:100%">
             <thead>
                 <tr class="text-center">
-                    <th>No</th>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Operation</th>
+                    <th width="10%">No</th>
+                    <th width="30%">Image</th>
+                    <th width="40%">Name</th>
+                    <th width="20%">Operation</th>
                 </tr>
             </thead>
             <tbody>
+                    @php $i = 0;  @endphp
+                    @foreach($facilityListing as $fasility)
+                    @php
+                        $i++;
+                    @endphp
                     <tr class="text-center">
-                        <td>1</td>
-                        <td><img src="https://picsum.photos/300/200" alt=""></td>
-                        <td>basket</td>
+                        <td>{{ $i }}</td>
+                        <td><img src="{{ asset('storage/Images/Fasilitas/') . '/' . $fasility['image'] }}" alt="" width="60%" height="100%"></td>
+                        <td>{{ $fasility['fasilityName'] }}</td>
                         <td>
                             <div class="d-flex justify-content-center operation">
                                 <form href="">
                                     <input type="hidden" name="button" value="Edit">
-                                    <button>
+                                    <button type="submit">
                                       <img src="{{asset('images/table/edit.svg')}}" alt="">
                                     </button>
                                 </form>
                                 <form href="">
                                     <input type="hidden" name="button" value="Delete">
-                                    <button>
+                                    <button type="submit">
                                       <img src="{{asset('images/table/delete.svg')}}" alt="">
                                     </button>
                                 </form>
                             </div>
                         </td>
                     </tr>
+                    @endforeach
             </tbody>
         </table>
 </div>
