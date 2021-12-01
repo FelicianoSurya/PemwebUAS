@@ -17,7 +17,9 @@ class UserController extends Controller
     public function index()
     {
         $params = User::where('role','user')->orWhere('role','management')->get();
-        return response($params);
+        // return response($params);
+        return view('admin.userTable');
+        
     }
 
     /**
@@ -181,9 +183,5 @@ class UserController extends Controller
 
         return response($favorites);
 
-    }
-
-    public function userTable(){
-        return view('admin.userTable');
     }
 }
