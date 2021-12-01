@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container" id="">
+<div class="container pt-5" id="">
     <div class="modal-dialog row" style="width:100%;margin-top:50px">	
         <div class="modal-content p-4 col-md-12">
             <div class="modal-header d-flex justify-content-center">
