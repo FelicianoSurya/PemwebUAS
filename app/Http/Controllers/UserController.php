@@ -184,6 +184,6 @@ class UserController extends Controller
     }
 
     public function userTable(){
-        return view('user.userTable');
+        return view('admin.userTable');
     }
 }
