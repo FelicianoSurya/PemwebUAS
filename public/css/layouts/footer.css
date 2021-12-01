@@ -31,3 +31,25 @@ footer .footer-note{
     font-size: 10px;
     color: white;
 }
+
+footer .nav-link{
+    transition: 0.2s;
+}
+
+footer .nav-link:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFB13E;
+    transition: 0.2s;
+}
+
+footer .nav-link:hover:after{
+    width: 100%;
+}
+
+footer .nav-link:hover{
+    color: #FFB13E;
+    transition: 0.2s;
+}
