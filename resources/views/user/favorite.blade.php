@@ -18,22 +18,22 @@
         </div>
     </div>
     <div class="listfasilitas row mt-2">
-    @foreach($facilities as $fasility)
-    <div class="col-lg-3 col-md-4 col-sm-6 my-3">
+    @foreach($datas as $data)
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3 box-fav-{{ $data['fasility']->id }}">
         <div class="card p-3">
-            <img src="{{ asset('storage/Images/Fasilitas') .'/'. $fasility['image'] }}" class="card-img-top" alt="...">
+            <img src="{{ asset('storage/Images/Fasilitas') .'/'. $data['fasility']->image }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{ $fasility['fasilityName'] }}</h5>
+                <h5 class="card-title">{{ $data['fasility']->fasilityName }}</h5>
                 <div class="btnCard row justify-content-between">
                     <input type="hidden" id="userID" value="{{ Auth()->user()->id }}">
-                    <input type="hidden" id="fasilityID" value="{{ $fasility['id'] }}">
-                    <a href="{{ Route('facilityDetail', $fasility['fasilityID']) }}" class="btn btn-light">Detail</a>
-                    <button id="btn-fav-{{$fasility['id']}}" class="btn 
+                    <input type="hidden" id="fasilityID" value="{{ $data['fasility']->id }}">
+                    <a href="{{ Route('facilityDetail', $data['fasility']->fasilityID) }}" class="btn btn-light">Detail</a>
+                    <button id="btn-fav-{{ $data['fasility']->id }}" class="btn 
                     @php
                         $fav = 'no';
                     @endphp
                     @foreach($favorites as $favorite)
-                        @if($favorite['fasilityID'] == $fasility['id'] && $favorite['userID'] == Auth()->user()->id)
+                        @if($favorite['fasilityID'] == $data['fasility']->id && $favorite['userID'] == Auth()->user()->id)
                             @php
                                 $fav = $favorite['id'];
                             @endphp
@@ -86,7 +86,7 @@
                     _token : _token
                 },
                 success : function(result){
-                    $('#btn-fav-' + result.id).removeClass('btn-danger').addClass('btn-light');
+                    $('#box-fav-' + result.id).addClass('hidden');
                 }
             })
         });

@@ -168,20 +168,33 @@ class UserController extends Controller
     }
 
     public function addFavorite(Request $request){
-        Favorite::create([
+        $params = Favorite::create([
             'fasilityID' => $request->fasilityID,
             'userID' => $request->userID
         ]);
 
-        return response(['message' => 'Add Favorite Berhasil']);
+        return response()->json($params);
     }
 
     public function favoriteList(){
         $userID = auth()->user()->id;
         
-        $favorites = Favorite::where('userID',$userID)->get();
+        $favorites = Favorite::with(['fasility','user'])->where('userID',$userID)->get();
+        $params = Favorite::all();
 
-        return response($favorites);
+        return view('user.favorite',[
+            'datas' => $favorites,
+            'favorites' => $params
+        ]);
+    }
 
+    public function deleteFavorite($id){
+        $favorite = Favorite::find($id);
+        $params = [
+            'id' => $favorite['fasilityID']
+        ];
+
+        $favorite->delete();
+        return response()->json($params);
     }
 }

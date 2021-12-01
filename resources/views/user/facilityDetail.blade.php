@@ -131,6 +131,46 @@
         	});
         });
     }
+    @elseif(session('status') == 'invalid'){
+        $(document).ready(function() {
+                Swal.fire({
+                icon: 'error',
+                title: 'Invalid',
+                text: "Booking Gagal! Silahkan masukan waktu dengan benar!",    
+                showCloseButton : true
+            });
+        });
+    }
+    @elseif(session('status') == 'already'){
+        $(document).ready(function() {
+                Swal.fire({
+                icon: 'error',
+                title: 'Already Booking at that time!',
+                text: "Booking Gagal! Kamu sudah Booking di Jam Tersebut!",    
+                showCloseButton : true
+            });
+        });
+    }
+    @elseif(session('status') == 'crash'){
+        $(document).ready(function() {
+                Swal.fire({
+                icon: 'error',
+                title: 'Crash!',
+                text: "Booking Gagal! Tempat sudah dibooking pada jam tersebut!",    
+                showCloseButton : true
+            });
+        });
+    }
+    @elseif(session('status') == 'success'){
+        $(document).ready(function() {
+                Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: "Booking Berhasil!",    
+                showCloseButton : true
+            });
+        });
+    }
     @endif
 </script>
 @endsection

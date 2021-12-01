@@ -59,7 +59,7 @@
                             <div class="col-md-12 d-flex text-center flex-column pt-3">
                                 <span>Don't have an acccount?</span>
                                 <span>
-                                   <a href="" style="color: #FFB13E;">Register</a>
+                                   <a href="{{ route('register') }}" style="color: #FFB13E;">Register</a>
                                 </span>
                             </div>
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fasilities;
+use App\Models\Favorite;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -30,12 +31,15 @@ class HomeController extends Controller
     {
         // return view('user.home');
         $params = Fasilities::all();
+        $favorites = Favorite::all();   
         return view('user.home',[
-            'facilities' => $params
+            'facilities' => $params,
+            'favorites' => $favorites
+
         ]);
-        return view('user.facilityDetail',[
-            'facilities' => $params
-        ]);
+        // return view('user.facilityDetail',[
+        //     'facilities' => $params
+        // ]);
     }
 
     public function indexAdmin(){

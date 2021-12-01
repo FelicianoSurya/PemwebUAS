@@ -10,28 +10,26 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
-
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layouts/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layouts/footer.css') }}" rel="stylesheet">
-
     
+    
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"/>
  
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.css"/>
- 
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.js"></script>
- 
- 
-
-
-    <!-- Jquery -->
-    <!-- Jquery DataTables -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.css"/>
+    
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.js"></script> -->
+    
     @yield('custom-css')
 </head>
 <body>
@@ -43,20 +41,20 @@
         <main>
             @yield('content')
         </main>
-
+        
         <footer>
             @include('layouts.footer')
         </footer>
     </div>
-    Jquery
-    <!-- <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+    <!-- Jquery -->
+    <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
-    <!-- <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script> -->
+    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap dataTables Javascript -->
-    <!-- <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script> -->
-   <!-- SweetAlert -->
+    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script> --> -->
+    <!-- SweetAlert -->
     <script src="{{ asset('js/sweetalert/sweetalert.js') }}"></script>
-   
+    
     @yield('custom-js')
 </body>
 </html>

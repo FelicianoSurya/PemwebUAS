@@ -90,9 +90,9 @@
         Let's Get Started
         </div>
         <div class="row justify-content-center">
-            <div class="col-3 text-right"><button class="btn btn-light">Login</button></div>
+            <div class="col-3 text-right"><a href="{{ route('login') }}"><button class="btn btn-light">Login</button></a></div>
             <div class="col-1 d-flex justify-content-center align-items-center content-text-or">or</div>
-            <div class="col-3 text-left"><button class="btn btn-light">Register</button></div>
+            <div class="col-3 text-left"><a href="{{ route('register') }}"><button class="btn btn-light">Register</button></a></div>
         </div>
     </div>
 </div>

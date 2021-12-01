@@ -17,10 +17,10 @@ class BookingController extends Controller
     public function index()
     {
         $params = booking::with(['user','fasility'])->get();
-        return response($params);
-        // return view('listFasilitas',[
-        //     'Facilities' => $params
-        // ]);
+        // return response($params);
+        return view('management.requestListing',[
+            'bookings' => $params
+        ]);
     }
 
     /**
@@ -57,13 +57,13 @@ class BookingController extends Controller
         $booking = Booking::all();
 
         foreach($booking as $data){
-            if($request->startTime > $request->endTime && $request->startTime == $request->endTime){
+            if($request->startTime > $request->endTime || $request->startTime == $request->endTime){
                 // return response(['message' => 'Tidak bisa booking! Waktunya tidak valid!']);
                 $request->session()->flash('status','invalid');
                 return back();
             }
-            if($data['bookingDate'] == $request->bookingDate && $data['fasilityID'] == $request->fasilityID){
-                if($request->startTime <= $data['startTime'] && $request->endTime > $data['startTIme'] || $request->startTime > $data['startTime'] && $request->startTime < $data['endTime']){
+            if($request->bookingDate == $data['bookingDate'] && $request->fasilityID == $data['fasilityID']){
+                if($request->startTime <= $data['startTime'] && $request->endTime > $data['startTime'] || $request->startTime > $data['startTime'] && $request->startTime < $data['endTime']){
                     // return response(['message' => 'Tidak Bisa Booking! Sudah Ada yang isi']);
                     $request->session()->flash('status','crash');
                     return back();
@@ -71,7 +71,7 @@ class BookingController extends Controller
             }
 
             if($data['userID'] == $request->userID && $data['bookingDate'] == $request->bookingDate){
-                if($request->startTime <= $data['startTime'] && $request->endTime > $data['startTIme'] || $request->startTime > $data['startTime'] && $request->startTime < $data['endTime']){
+                if($request->startTime <= $data['startTime'] && $request->endTime > $data['startTime'] || $request->startTime > $data['startTime'] && $request->startTime < $data['endTime']){
                     // return response(['message' => 'Tidak Bisa Booking! Anda Sudah memiliki jadwal diwaktu yang sama!']);
                     $request->session()->flash('status','already');
                     return back();

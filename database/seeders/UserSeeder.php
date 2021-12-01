@@ -43,6 +43,13 @@ class UserSeeder extends Seeder
                 'role' => 'user',
                 'image' => 'perempuan.jpg'
             ],
+            [
+                'name' => 'Fernando',
+                'email' => 'nando@management.com',
+                'password' => bcrypt('nando'),
+                'role' => 'management',
+                'image' => 'laki.jpg'
+            ]
         ];
 
         foreach($user as $key=> $value){
