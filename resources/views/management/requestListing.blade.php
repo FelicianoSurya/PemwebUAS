@@ -1,13 +1,70 @@
 @extends('layouts.app')
 
 @section('custom-css')
-<!-- link css -->
+<link rel="stylesheet" href="{{asset('css/management/request.css')}}">
 @endsection
 
 @section('content')
-<!-- Code content here -->
+<div class="container pt-5">
+        <div class="ataslist row justify-content-between py-5">
+            <div class="judul col-lg-6 col-md-6 col-12 row ">
+                <span style="color: #372074;">User</span>
+                <span style="color: #FFB13E;">Listing</span>
+            </div>
+            <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
+                <button type="button" class="btn btn-light px-4">Add</button>
+            </div>
+        </div>
+    </div>
+<div class="container d-flex align-items-center justify-content-center">
+        <table id="example" class="table table-striped " style="width:100%">
+            <thead>
+                <tr class="text-center">
+                    <th>No</th>
+                    <th>Requester</th>
+                    <th>Requested Facility</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Status</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr class="text-center">
+                        <td>1</td>
+                        <td>Anooo</td>
+                        <td>Meeting Room</td>
+                        <td>2021/05/12</td>
+                        <td>09:00</td>
+                        <td>10:00</td>
+                        <td>Pending</td>
+                        <td>
+                            <div class="d-flex justify-content-center operation">
+                                <form href="">
+                                    <input type="hidden" name="button" value="Edit">
+                                    <button>
+                                      <img src="{{asset('images/table/check.svg')}}" alt="">
+                                    </button>
+                                </form>
+                                <form href="">
+                                    <input type="hidden" name="button" value="Delete">
+                                    <button>
+                                      <img src="{{asset('images/table/cross.svg')}}" alt="">
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</div>
 @endsection
 
 @section('custom-js')
-<!-- code js or link js -->
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+</script>
 @endsection
