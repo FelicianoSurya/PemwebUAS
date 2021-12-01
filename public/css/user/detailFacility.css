@@ -16,6 +16,20 @@
     background-color: #f7f7f7;
 }
 
+.isidetailF h1{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.isidetailF p{
+    font-size: 1.1rem;
+    min-height: 25vh;
+}
+
 .backgroundDesc {
     background-color: #f7f7f7;
+}
+
+.pictF img{
+    border-radius:20px !important;
 }

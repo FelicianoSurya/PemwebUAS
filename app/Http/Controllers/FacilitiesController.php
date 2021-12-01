@@ -17,12 +17,12 @@ class FacilitiesController extends Controller
     public function index()
     {
         $params = Fasilities::all();
-        // return response($params);
+        return response($params);
         // return view('listFasilitas',[
         //     'Facilities' => $params
         // ]);
-         return view('user/home',[
-            'facilitylisting' => $params
+         return view('user.home',[
+            'fasilities' => $params
         ]);
     }
 
@@ -45,7 +45,7 @@ class FacilitiesController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -90,9 +90,12 @@ class FacilitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('user.facilityDetail');
+        $fasility = Fasilities::where('fasilityID', $id)->first();
+        return view('user.facilityDetail',[
+            'fasility' => $fasility
+        ]);
     }
 
     /**

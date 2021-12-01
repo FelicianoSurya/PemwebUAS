@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::group(['middleware' => 'user'],function(){
         Route::get('/home', [HomeController::class, 'index'])->name('home');
         Route::resource('booking', BookingController::class);
-        Route::get('/facilityDetail', [FacilitiesController::class, 'show'])->name('facilityDetail');
+        Route::get('/home/fasility/{id}', [FacilitiesController::class, 'show'])->name('facilityDetail');
     });
 
     Route::group(['middleware' => 'admin'],function(){
