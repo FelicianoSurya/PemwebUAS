@@ -38,13 +38,14 @@ Route::group(['middleware' => 'auth'],function(){
     Route::group(['middleware' => 'admin'],function(){
         Route::get('/adminHome',[HomeController::class, 'indexAdmin'])->name('homeAdmin');
         Route::resource('management', UserController::class);
-        Route::delete('booking/{id}', [BookingController::class, 'destroy']);
-        Route::get('/listFacility',[FacilitiesController::class, 'adminFacility'])->name('listFacility');
+        Route::resource('admin/facilities', FacilitiesController::class);
+        Route::delete('booking/{id}', [BookingController::class, 'destroy']); 
+        Route::get('requestListing' , [BookingController::class, 'index'])->name('requestListing');
     });
     
     Route::group(['middleware' => 'management'],function(){
         Route::get('/managementHome',[HomeController::class, 'indexManagement'])->name('homeManagement');
-        Route::resource('fasilitas', FacilitiesController::class);
+        Route::resource('facilities', FacilitiesController::class);
         Route::get('requestListing' , [BookingController::class, 'index'])->name('requestListing');
         Route::put('booking/approved/{id}', [BookingController::class, 'approved']);
         Route::put('booking/rejected/{id}', [BookingController::class, 'rejected']);

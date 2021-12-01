@@ -34,13 +34,41 @@
                         </li>
                     @endif
                 @else
+                    @if(Auth()->user()->role == 'user')
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ route('home') }}">{{ __('Facilities') }}</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="">{{ __('Requests') }}</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="">{{ __('Book Now') }}</a>
+                        </li>
+                    @elseif(Auth()->user()->role == 'management')
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ url('facilities') }}">{{ __('Facilities') }}</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="">{{ __('Requests') }}</a>
+                        </li>
+                    @else
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ route('home') }}">{{ __('Users') }}</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ url('admin/facilities') }}">{{ __('Facilities') }}</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="">{{ __('Requests') }}</a>
+                        </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-
+                    
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route('logout') }}" style="color:black"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

@@ -19,7 +19,7 @@
     </div>
     <div class="listfasilitas row mt-2">
     @foreach($datas as $data)
-    <div class="col-lg-3 col-md-4 col-sm-6 my-3 box-fav-{{ $data['fasility']->id }}">
+    <div class="col-lg-3 col-md-4 col-sm-6 my-3" id="box-fav-{{ $data['fasility']->id }}">
         <div class="card p-3">
             <img src="{{ asset('storage/Images/Fasilitas') .'/'. $data['fasility']->image }}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -51,7 +51,6 @@
     </div>
     @endforeach
     </div>
-    <div id="hello">aa</div>
 </div>
 
 @endsection
@@ -80,13 +79,13 @@
             let _token   = $('meta[name="csrf-token"]').attr('content');
             let favoriteID = $(this).closest('.card-body').children('div').children('#favoriteID').val();
             $.ajax({
-                url : 'home/favorite/' + favoriteID,
+                url : 'favorite/' + favoriteID,
                 method : 'DELETE',
                 data : {
                     _token : _token
                 },
                 success : function(result){
-                    $('#box-fav-' + result.id).addClass('hidden');
+                    $('#box-fav-' + result.id).addClass('d-none');
                 }
             })
         });

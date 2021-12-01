@@ -17,24 +17,12 @@ class FacilitiesController extends Controller
     public function index()
     {
         $params = Fasilities::all();
-        return response($params);
-        // return view('listFasilitas',[
-        //     'Facilities' => $params
-        // ]);
-         return view('user.home',[
-            'fasilities' => $params
-        ]);
-    }
-
-    public function adminFacility()
-    {
-        $params = Fasilities::all();
         // return response($params);
         // return view('listFasilitas',[
         //     'Facilities' => $params
         // ]);
-         return view('admin/listFacility',[
-            'facilitylisting' => $params
+         return view('admin.listFacility',[
+            'facilityListing' => $params
         ]);
     }
 
@@ -45,7 +33,7 @@ class FacilitiesController extends Controller
      */
     public function create()
     {
-        
+        return view('admin.addFacility');
     }
 
     /**
