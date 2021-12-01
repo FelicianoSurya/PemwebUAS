@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-<div class="container loginContainer d-flex align-items-center justify-content-center">
-    <div class="row w-50 justify-content-center">
+<div class="loginContainer d-flex align-items-center justify-content-center">
+    <div class="row isilogin justify-content-center">
         <div class="col-md-12">
             <div class="card p-3">
                 <div class="card-header text-center">{{ __('Login') }}</div>
