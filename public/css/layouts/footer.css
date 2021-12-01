@@ -1,55 +1,57 @@
-footer{
+footer {
     background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-footer .footer-details .footer-logo{
+footer .footer-details .footer-logo {
     color: white;
     font-size: 36px;
     margin-bottom: 5px;
 }
 
-footer .footer-details .footer-logo span{
-    color: #FFB13E;
+footer .footer-details .footer-logo span {
+    color: #ffb13e;
 }
 
-footer .footer-details .footer-desc{
+footer .footer-details .footer-desc {
     color: white;
     font-size: 15px;
 }
 
-footer .footer-nav{
+footer .footer-nav {
     text-decoration: none;
     list-style-type: none;
 }
-footer .footer-nav a{
+footer .footer-nav a {
     color: white;
-
 }
 
-footer .footer-note{
+footer .footer-note {
     margin-top: 25px;
     font-size: 10px;
     color: white;
 }
 
-footer .nav-link{
+footer .nav-link {
     transition: 0.2s;
 }
 
-footer .nav-link:after{
-    content: '';
+footer .nav-link:after {
+    content: "";
     display: block;
     width: 0;
     height: 2px;
-    background: #FFB13E;
+    background: #ffb13e;
     transition: 0.2s;
 }
 
-footer .nav-link:hover:after{
+footer .nav-link:hover:after {
     width: 100%;
 }
 
-footer .nav-link:hover{
-    color: #FFB13E;
+footer .nav-link:hover {
+    color: #ffb13e;
     transition: 0.2s;
 }
