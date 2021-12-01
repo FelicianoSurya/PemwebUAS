@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<div class="container loginContainer d-flex align-items-center justify-content-center">
-    <div class="row justify-content-center w-50">
-        <div class="col-md-12">
+<div class="loginContainer d-flex align-items-center justify-content-center pt-5">
+    <div class="row isilogin justify-content-center">
+        <div class="col-md-12 py-5">
             <div class="card p-3">
                 <div class="card-header text-center">{{ __('Register') }}</div>
 
@@ -30,12 +30,27 @@
                         </div>
 
                         <div class="form-group row flex-column">
-                            <label for="username" class="col-md-4 col-form-label">{{ __('Username') }}</label>
+                            <label for="email" class="col-md-4 col-form-label">{{ __('Email') }}</label>
 
                             <div class="col-md-12">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="email" value="{{ old('username') }}" required>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
 
-                                @error('username')
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row flex-column">
+                            <label for="image" class="col-md-5 col-form-label">{{ __('Profile Picture') }}</label>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="file" placeholder="Profile Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="email" value="{{ old('image') }}" required />
+
+
+                                @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
