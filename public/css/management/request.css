@@ -1,0 +1,20 @@
+.judul span {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.btn {
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.operation form button {
+    border: none;
+}
+
+.operation form button img {
+    max-width: 20px;
+}
