@@ -1,0 +1,34 @@
+.modal-header {
+    font-size: 32px;
+    font-weight: bold;
+    color: #372074;
+    background-color: transparent;
+    border-bottom: transparent;
+}
+
+.btn {
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+input[type="file"] {
+    border: none;
+}
+
+.modal-dialog {
+    min-width: 30%;
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        min-width: 75%;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        width: 100%;
+    }
+}
