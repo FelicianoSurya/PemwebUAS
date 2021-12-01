@@ -17,7 +17,7 @@
         </div>
     </div>
 <div class="container d-flex align-items-center justify-content-center">
-        <table id="example" class="table table-striped " style="width:100%">
+        <table id="example" class="w-100 table table-striped " style="width:100%">
             <thead>
                 <tr class="text-center">
                     <th>No</th>
@@ -55,9 +55,9 @@
 @endsection
 
 @section('custom-js')
-<script type="text/javascript" charset="utf-8">
+<script>
     $(document).ready(function() {
-	$('#example').dataTable();
+	$('#example').DataTable();
  } );
 </script>
     

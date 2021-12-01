@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +21,17 @@
     <link href="{{ asset('css/layouts/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/layouts/footer.css') }}" rel="stylesheet">
 
+    
+ 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.css"/>
+ 
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.js"></script>
+ 
+ 
 
+
+    <!-- Jquery -->
+    <!-- Jquery DataTables -->
     @yield('custom-css')
 </head>
 <body>
@@ -38,12 +48,9 @@
             @include('layouts.footer')
         </footer>
     </div>
-    <!-- Jquery -->
-    <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <!-- Jquery DataTables -->
-    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
-    <!-- Bootstrap dataTables Javascript -->
-    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    
+
     @yield('custom-js')
 </body>
 </html>

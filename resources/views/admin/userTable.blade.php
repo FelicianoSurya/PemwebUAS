@@ -59,8 +59,8 @@
 @section('custom-js')
 <script>
     $(document).ready(function() {
-    $('#example').DataTable();
-    } );
+        $('#example').DataTable();
+    });
 </script>
     
 @endsection
