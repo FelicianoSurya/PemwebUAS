@@ -33,7 +33,7 @@
                             <label for="email" class="col-md-4 col-form-label">{{ __('Email') }}</label>
 
                             <div class="col-md-12">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -80,6 +80,22 @@
                             </div>
                         </div>
 
+                        <div class="form-group row flex-column">
+                            <div class="col-lg-8 col-md-8 col-sm-10 col-12 captcha">
+                                <span>{!! captcha_img() !!}</span>
+                                <button type="button" class="btn btn-danger" class="reload" id="reload">
+                                    &#x21bb;
+                                </button>
+                                @if(session('captcha') == 'ada')
+                                    <p class="text-danger">Captcha Kosong atau tidak benar!</p>
+                                @endif
+                            </div>
+
+                            <div class="col-lg-6 col-md-8 col-sm-10 col-12 pt-2">
+                                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                            </div>
+                        </div>
+                        
                         <div class="form-group row mb-0">
                             <div class="col-md-12 d-flex justify-content-center">
                                 <button type="submit" class="btn btn-light px-4">
@@ -93,4 +109,16 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('#reload').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'reloadCaptcha',
+            success: function (data) {
+                $(".captcha span").html(data.captcha);
+            }
+        });
+    });
+
+</script>
 @endsection

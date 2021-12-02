@@ -70,17 +70,22 @@ class RegisterController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|string|max:255|unique:users',
                 'password' => 'required|string|min:3|confirmed',
-                'image' => 'required|mimes:jpg,jpeg,png,gif|max:2048'
+                'image' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
+                'captcha' => 'required|captcha'
             ]);
         }else{
             $validate = Validator::make($request->all(), [
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|string|max:255|unique:users',
                 'password' => 'required|string|min:3|confirmed',
+                'captcha' => 'required|captcha'
             ]);
         }
 
         if($validate->fails()){
+            if($validate->messages()->get('captcha')){
+                $request->session()->flash('captcha','ada');
+            }
             return back()->withErrors($validate);
         }
 
@@ -103,5 +108,10 @@ class RegisterController extends Controller
             ]);
         }
         return redirect('login')->with(['register' => 'berhasil']);
+    }
+
+    public function reloadCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
     }
 }

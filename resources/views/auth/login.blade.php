@@ -69,4 +69,15 @@
         </div>
     </div>
 </div>
+<script>
+    @if(session('register'))
+        $(document).ready(function() {
+            Swal.fire({
+            icon: 'success',
+            title: 'Register',
+            text: "Berhasil Registrasi!", 
+        });
+    });
+    @endif
+</script>
 @endsection

@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-<div class="container d-flex align-items-center justify-content-center flex-column">
+<div class="container box-facility d-flex align-items-center justify-content-center flex-column">
         <table id="example" class="w-100 table table-striped " style="width:100%">
             <thead>
                 <tr class="text-center">
