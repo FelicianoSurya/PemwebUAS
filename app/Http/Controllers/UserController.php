@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\Fasilities;
 use App\Models\Favorite;
+use App\Models\Booking;
 
 class UserController extends Controller
 {
@@ -16,9 +18,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $params = User::where('role','user')->orWhere('role','management')->get();
+        $params = User::where('role','management')->get();
         // return response($params);
-        return view('admin.userTable');
+        return view('admin.userTable',[
+            'users' => $params,
+        ]);
         
     }
 
@@ -29,7 +33,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.addUser');
     }
 
     /**
@@ -42,22 +46,21 @@ class UserController extends Controller
     {
         if($request->hasFile('image')){
             $validate = Validator::make($request->all(),[
-                'email' => 'required|string|unique:users',
+                'email' => 'required|email|unique:users',
                 'password' => 'required|string|min:2',
                 'name' => 'required',
                 'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
             ]);
         }else{
             $validate = Validator::make($request->all(),[
-                'email' => 'required|string|unique:users',
-                'password' => 'required|string|min:2',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|string|min:2|confirmed',
                 'name' => 'required'
             ]);
         }
 
         if($validate->fails()){
-            return response(['message' => 'gagal tambah management!']);
-            // return back()->withError('message','error');
+            return back()->withErrors($validate);
         };
 
         if($request->hasFile('image')){
@@ -76,15 +79,14 @@ class UserController extends Controller
         }else{
             User::create([
                 'name' => $request->name,
-                'username' => $request->email,
+                'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'role' => 'management',
+                'image' => 'laki.jpg'
             ]);  
         }
 
-        return response([
-            'message' => 'berhasil menambahkan management',
-        ]);
+        return redirect('management')->with(['success' => 'mantap']);
     }
 
     /**
@@ -106,7 +108,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+    
+        return view('admin.editUser',[
+            'user' => $user
+        ]);
     }
 
     /**
@@ -116,17 +122,39 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        $id = $request->id;
         $management = User::find($id);
-        $validate = Validator::make($request->all(),[
-            'password' => 'required|string|min:2',
-            'name' => 'required'
-        ]);
+
+        if($request->hasFile('image')){
+            if($request->pass == 'yes'){
+                $validate = Validator::make($request->all(),[
+                    'password' => 'required|confirmed|string|min:2',
+                    'name' => 'required',
+                    'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
+                ]);
+            }else{
+                $validate = Validator::make($request->all(),[
+                    'name' => 'required',
+                    'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
+                ]);
+            }
+        }else{
+            if($request->pass == 'yes'){
+                $validate = Validator::make($request->all(),[
+                    'password' => 'required|confirmed|string|min:2',
+                    'name' => 'required',
+                ]);
+            }else{
+                $validate = Validator::make($request->all(),[
+                    'name' => 'required',
+                ]);
+            }
+        }
 
         if($validate->fails()){
-            return response(['message' => 'gagal edit management!']);
-            // return back()->withError('message','error');
+            return back()->withErrors($validate);
         };
 
         if($request->hasFile('image')){
@@ -135,19 +163,34 @@ class UserController extends Controller
             $image_name = $image->getClientOriginalName();
             $path = $request->file('image')->storeAs($destination_path,$image_name);
 
-            $management->fill([
-                'password' => bcrypt($request->password),
-                'name' => $request->name,
-                'image' => $image_name,
-            ]);
+            if($request->pass == 'yes'){
+                $management->fill([
+                    'password' => bcrypt($request->password),
+                    'name' => $request->name,
+                    'image' => $image_name,
+                ]);
+            }else{
+                $management->fill([
+                    'name' => $request->name,
+                    'image' => $image_name,
+                ]);
+            }
         }else{
-            $management->fill([
-                'password' => bcrypt($request->password),
-                'name' => $request->name
-            ]);
+            if($request->pass == 'yes'){
+                $management->fill([
+                    'password' => bcrypt($request->password),
+                    'name' => $request->name,
+                ]);
+            }else{
+                $management->fill([
+                    'name' => $request->name,
+                ]);
+            }
         }
+        
         $management->save();
-        return response(['message' => 'Edit Management Success!']);
+        
+        return redirect('/management')->with(['edit' => 'User berhasil diEdit!']);
     }
 
     /**
@@ -161,9 +204,9 @@ class UserController extends Controller
         $user = User::find($id);
         if($user){
             $user->delete();
-            return response(['message' => 'Hapus Management Success!']);
+            return back()->with(['delete' => 'User Berhasil diDelete!']);
         }else{
-            return response(['message' => 'Akun management Tidak ada!']);
+            return back()->with(['error' => 'Data tidak ada']);
         }
     }
 
@@ -196,5 +239,34 @@ class UserController extends Controller
 
         $favorite->delete();
         return response()->json($params);
+    }
+
+    public function bookingForm(){
+        $fasilities = Fasilities::all();
+        return view('user.booking',[
+            'fasilities' => $fasilities,
+        ]);
+    }
+
+    public function userRequest(){
+        $userID = Auth()->user()->id;
+        $params = Booking::where('userID',$userID)->where('status','waiting')->paginate(10);
+
+        return view('management.requestListing',[
+            'bookings' => $params,
+        ]);
+    }
+
+    public function userHistory(){
+        $userID = Auth()->user()->id;
+        $params = Booking::where('userID',$userID)
+            ->where(function($query){
+                $query->where('status','approved')
+                ->orWhere('status','rejected');
+            })->paginate(10);
+
+        return view('management.requestListing',[
+            'bookings' => $params,
+        ]);
     }
 }

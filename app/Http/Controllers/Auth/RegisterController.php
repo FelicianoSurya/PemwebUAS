@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -49,11 +50,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'string', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+       
     }
 
     /**
@@ -64,10 +61,47 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+       
+    }
+
+    public function register(Request $request){
+        if($request->hasFile('image')){
+            $validate = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|string|max:255|unique:users',
+                'password' => 'required|string|min:3|confirmed',
+                'image' => 'required|mimes:jpg,jpeg,png,gif|max:2048'
+            ]);
+        }else{
+            $validate = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|string|max:255|unique:users',
+                'password' => 'required|string|min:3|confirmed',
+            ]);
+        }
+
+        if($validate->fails()){
+            return back()->withErrors($validate);
+        }
+
+        if($request->hasFile('image')){
+            $destination_path = 'public/Images/User';
+            $image = $request->image;
+            $image_name = $image->getClientOriginalName();
+            $path = $image->storeAs($destination_path,$image_name);
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'image' => $image_name,
+            ]);    
+        }else{
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password)
+            ]);
+        }
+        return redirect('login')->with(['register' => 'berhasil']);
     }
 }

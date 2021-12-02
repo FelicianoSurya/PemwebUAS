@@ -12,7 +12,7 @@
                 <span style="color: #FFB13E;">Listing</span>
             </div>
             <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
-                <button type="button" class="btn btn-light px-4">Add</button>
+                <a href="{{ url('management/create') }}"><button type="button" class="btn btn-light px-4">Add</button></a>
             </div>
         </div>
     </div>
@@ -28,21 +28,27 @@
                 </tr>
             </thead>
             <tbody>
+                @php $i = 0; @endphp
+                @foreach($users as $user)
+                    @php $i++ @endphp
                     <tr class="text-center">
-                        <td>1</td>
-                        <td>Anooo</td>
-                        <td>ano@dea.com</td>
-                        <td>Manager</td>
+                        <td>{{ $i }}</td>
+                        <td>{{ $user['name'] }}</td>
+                        <td>{{ $user['email'] }}</td>
+                        <td>@if($user['role'] == 'management')
+                                Employee
+                            @else
+                                User
+                            @endif
+                        </td>
                         <td>
                             <div class="d-flex justify-content-center operation">
-                                <form href="">
-                                    <input type="hidden" name="button" value="Edit">
+                                <form action="{{ url('management/form') . '/' . $user['id']}}">
                                     <button>
                                       <img src="{{asset('images/table/edit.svg')}}" alt="">
                                     </button>
                                 </form>
-                                <form href="">
-                                    <input type="hidden" name="button" value="Delete">
+                                <form action="{{ url('management/delete') . '/' . $user['id'] }}">
                                     <button>
                                       <img src="{{asset('images/table/delete.svg')}}" alt="">
                                     </button>
@@ -50,6 +56,7 @@
                             </div>
                         </td>
                     </tr>
+                @endforeach
             </tbody>
         </table>
 </div>
@@ -58,9 +65,32 @@
 
 @section('custom-js')
 <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
+    @if($status = Session::get('success'))
+        $(document).ready(function() {
+            Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: "User Berhasil Ditambahkan!", 
+        });
     });
+    @elseif($status = Session::get('delete'))
+        $(document).ready(function() {
+                Swal.fire({
+                icon: 'success',
+                title: 'Delete',
+                text: "User Berhasil Dihapus!", 
+            });
+        });
+    @endif
+    @if($status = Session::get('edit'))
+    $(document).ready(function() {
+            Swal.fire({
+            icon: 'success',
+            title: 'Edit',
+            text: "User Berhasil Diedit!", 
+        });
+    });
+    @endif
 </script>
     
 @endsection

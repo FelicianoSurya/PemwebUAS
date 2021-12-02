@@ -16,7 +16,7 @@ class FacilitiesController extends Controller
      */
     public function index()
     {
-        $params = Fasilities::all();
+        $params = Fasilities::paginate(7);
         // return response($params);
         // return view('listFasilitas',[
         //     'Facilities' => $params
@@ -52,7 +52,7 @@ class FacilitiesController extends Controller
         ]);
 
         if($validate->fails()){
-            return response(['message' => 'Add Fasilitas Gagal!']);
+            return back()->withErrors($validate);
         }
 
         if($request->hasFile('image')){
@@ -69,7 +69,11 @@ class FacilitiesController extends Controller
             'image' => $image_name
         ]);
 
-        return response(['message' => 'add Fasilitas Berhasil!']);
+        if(Auth()->user()->role == 'admin'){
+            return redirect('admin/facilities')->with(['success' => 'success']);
+        }else{
+            return redirect('manager/facilities')->with(['success' => 'success']);
+        }
     }
 
     /**
@@ -94,7 +98,10 @@ class FacilitiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $fasility = Fasilities::find($id);
+        return view('admin.editFacility',[
+            'fasility' => $fasility
+        ]);
     }
 
     /**
@@ -104,8 +111,9 @@ class FacilitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        $id = $request->id;
         $fasility = Fasilities::find($id);
 
         if(!$fasility){
@@ -116,7 +124,7 @@ class FacilitiesController extends Controller
             $validate = Validator::make($request->all(),[
                 'fasilityName' => 'required',
                 'description' => 'required',
-                'image' => 'require|mimes:jpeg,jpg,png,gif|max:2048'
+                'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
             ]);    
         }else{
             $validate = Validator::make($request->all(),[
@@ -126,7 +134,7 @@ class FacilitiesController extends Controller
         }
 
         if($validate->fails()){
-            return response(['message' => 'Update Fasilitas Gagal!']);
+            return back()->withErrors($validate);
         }
         
         if($request->hasFile('image')){
@@ -148,7 +156,11 @@ class FacilitiesController extends Controller
         }
 
         $fasility->save();
-        return response(['message' => 'Update Fasilitas Berhasil!']);
+        if(Auth()->user()->role == 'admin'){
+            return redirect('/admin/facilities')->with(['info' => 'edit']);
+        }else{
+            return redirect('/facilities')->with(['info' => 'edit']);
+        }
     }
 
     /**
@@ -157,12 +169,13 @@ class FacilitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
         $fasility = Fasilities::find($id);
         if($fasility){
             $fasility->delete();
-            return response(['message' => 'berhasil Delete Fasilitas']);
+            $request->session()->flash('status','delete');      
+            return back();
         }else{
             return response(['message' => 'data tidak ada!']);
         }

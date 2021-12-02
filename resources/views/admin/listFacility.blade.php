@@ -12,7 +12,11 @@
                 <span style="color: #FFB13E;">Listing</span>
             </div>
             <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
-                <button type="button" class="btn btn-light px-4">Add</button>
+                @if(Auth()->user()->role == 'admin')
+                    <a href="{{ url('admin/facilities/create') }}"><button type="button" class="btn btn-light px-4">Add</button></a>
+                @elseif(Auth()->user()->role == 'management')
+                    <a href="{{ url('manager/facilities/create') }}"><button type="button" class="btn btn-light px-4">Add</button></a>
+                @endif
             </div>
         </div>
     </div>
@@ -33,19 +37,25 @@
                         $i++;
                     @endphp
                     <tr class="text-center">
-                        <td>{{ $i }}</td>
-                        <td><img src="{{ asset('storage/Images/Fasilitas/') . '/' . $fasility['image'] }}" alt="" width="60%" height="100%"></td>
-                        <td>{{ $fasility['fasilityName'] }}</td>
-                        <td>
+                        <td class="text-center align-middle">{{ $i }}</td>
+                        <td class="text-center align-middle"><img src="{{ asset('storage/Images/Fasilitas/') . '/' . $fasility['image'] }}" alt="" width="60%" height="100%"></td>
+                        <td class="text-center align-middle">{{ $fasility['fasilityName'] }}</td>
+                        <td class="text-center align-middle">
                             <div class="d-flex justify-content-center operation">
-                                <form href="">
-                                    <input type="hidden" name="button" value="Edit">
+                                @if(Auth()->user()->role == 'admin')
+                                <form action="{{ url('admin/facilities/form') . '/' . $fasility['id'] }}" method="GET">
+                                @elseif(Auth()->user()->role == 'management')
+                                <form action="{{ url('manager/facilities/form') . '/' . $fasility['id'] }}" method="GET">
+                                @endif
                                     <button type="submit">
                                       <img src="{{asset('images/table/edit.svg')}}" alt="">
                                     </button>
                                 </form>
-                                <form href="">
-                                    <input type="hidden" name="button" value="Delete">
+                                @if(Auth()->user()->role == 'admin')
+                                <form action="{{ url('admin/facilities/delete') . '/' . $fasility['id'] }}" method="GET">
+                                @elseif(Auth()->user()->role == 'management')
+                                <form action="{{ url('manager/facilities/delete') . '/' . $fasility['id'] }}" method="GET">
+                                @endif
                                     <button type="submit">
                                       <img src="{{asset('images/table/delete.svg')}}" alt="">
                                     </button>
@@ -56,15 +66,41 @@
                     @endforeach
             </tbody>
         </table>
+        <!-- <div>
+            {{ $facilityListing->links() }}
+        </div> -->
 </div>
 
 @endsection
 
 @section('custom-js')
 <script>
+@if($status = Session::get('success'))
+        $(document).ready(function() {
+            Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: "Fasilitas Berhasil Ditambahkan!", 
+        });
+    });
+@elseif(session('status') == 'delete')
     $(document).ready(function() {
-	$('#example').DataTable();
- } );
+            Swal.fire({
+            icon: 'success',
+            title: 'Delete',
+            text: "Fasilitas Berhasil Dihapus!", 
+        });
+    });
+@endif
+@if($status = Session::get('info'))
+$(document).ready(function() {
+        Swal.fire({
+        icon: 'success',
+        title: 'Edit',
+        text: "Fasilitas Berhasil Diedit!", 
+    });
+});
+ @endif
 </script>
     
 @endsection

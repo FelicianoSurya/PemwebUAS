@@ -39,21 +39,21 @@
                             <a class="nav-link" href="{{ route('home') }}">{{ __('Facilities') }}</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="">{{ __('Requests') }}</a>
+                            <a class="nav-link" href="{{ route('userRequest') }}">{{ __('Requests') }}</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="">{{ __('Book Now') }}</a>
+                            <a class="nav-link" href="{{ route('bookingForm') }}">{{ __('Book Now') }}</a>
                         </li>
                     @elseif(Auth()->user()->role == 'management')
                         <li class="nav-item px-3">
                             <a class="nav-link" href="{{ url('facilities') }}">{{ __('Facilities') }}</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="">{{ __('Requests') }}</a>
+                            <a class="nav-link" href="{{ route('requestListingManager') }}">{{ __('Requests') }}</a>
                         </li>
-                    @else
+                    @elseif(Auth()->user()->role == 'admin')
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('home') }}">{{ __('Users') }}</a>
+                            <a class="nav-link" href="{{ url('management') }}">{{ __('Users') }}</a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link" href="{{ url('admin/facilities') }}">{{ __('Facilities') }}</a>
@@ -62,7 +62,8 @@
                             <a class="nav-link" href="{{ route('requestListingAdmin') }}">{{ __('Requests') }}</a>
                         </li>
                     @endif
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown d-flex align-items-center">
+                        <img src="{{ asset('storage/Images/user/') . '/' . Auth()->user()->image }}" width="30" height="30" class="rounded-circle" alt="">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
@@ -84,4 +85,6 @@
         </div>
     </div>
 </nav>
+
+
 

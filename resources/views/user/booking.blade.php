@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="modal" style="background-color:rgba(0,0,0,0.5);" id="myModal" role="dialog">
+<div class="container pt-5">
     <div class="modal-dialog" style="width:100%;margin-top:50px">	
         <div class="modal-content p-4">
             <div class="modal-header">
@@ -16,11 +16,15 @@
                 @csrf
                 <input type="hidden" name="userID" value="{{ Auth()->user()->id }}">
                 <div class="form-group row flex-column">
-                    <label for="fasilityID" class="col-md-12 col-form-label">{{ __('Fasility Name') }}</label>
+                    <label for="fasilityName" class="col-md-12 col-form-label">{{ __('Fasility Name') }}</label>
 
                     <div class="col-md-12">
-                        <input id="fasilityID" disabled type="text" class="form-control" name="fasilityID" value="{{ $fasility['fasilityName'] }}" required  autofocus>
-                        <input id="fasilityID" type="hidden" class="form-control" name="fasilityID" value="{{ $fasility['id'] }}">
+                        <select name="fasilityID" class="form-control" id="id">
+                            <option value="">Fasililty Name</option>
+                            @foreach($fasilities as $fasility)
+                            <option value="{{ $fasility['id'] }}">{{ $fasility['fasilityName'] }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
@@ -73,7 +77,7 @@
                         </button>
                     </div>
                     <div class="col-md-4">
-                        <button class="btn btn-danger" class="close" data-dismiss="modal">Cancel</button>
+                        <a href="{{ route('home') }}"><button type="button" class="btn btn-danger">Cancel</button></a>
                     </div>
                 </div>
             </form>
@@ -82,33 +86,6 @@
     </div>
 </div>
 
-    <div class="container pt-5">
-        <div class="ataslist row justify-content-between py-5">
-            <div class="judul col-lg-6 col-md-6 col-12 row ">
-                <span style="color: #372074;">Facilities</span>
-                <span style="color: #FFB13E;">Listing</span>
-            </div>
-            <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
-                <a href="{{ route('home') }}"><button type="button" class="btn btn-light px-4">Back</button></a>
-            </div>
-        </div>
-    </div>
-    <div class="backgroundDesc">
-        <div class="isidetailF row px-3 justify-content-evenly mx-auto">
-            <div class="pictF col-lg-6 col-md-6 col-12 text-center p-5">
-                <img src="{{ asset('storage/Images/Fasilitas') . '/' . $fasility['image'] }}" width="90%" height="100%" alt="" class="rounded">
-            </div>
-            <div class="textDetail col-lg-4 col-md-6 col-12 py-lg-5 ps-md-2 py-md-2 py-sm-1">
-                <h1>{{ $fasility['fasilityName'] }}</h1>
-                <p>{{ $fasility['description'] }}</p>
-                <a href="#" id="btn-booked" class="btn btn-light">Booked</a>
-                <a href="#" class="btn btn-light mx-2">Favorite &hearts;</a>
-            </div>
-        </div>
-    </div>
-    
-
-    </div>
 @endsection
 
 @section('custom-js')

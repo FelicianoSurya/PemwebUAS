@@ -27,7 +27,7 @@ class BookingController extends Controller
     {
         $params = booking::with(['user','fasility'])->where('status','waiting')->paginate(4);
         // return response($params);
-        return view('management.requestListing',[
+        return view('management.requestWaiting',[
             'bookings' => $params
         ]);
     }
@@ -134,7 +134,7 @@ class BookingController extends Controller
     {
         $booking = Booking::find($id);
         if(!$booking){
-            return response(['message' => 'data tidak ditemukan!']);
+            return back()->with(['invalid' => 'data tidak ada!']);
         }
 
         $booking->fill([
@@ -144,7 +144,7 @@ class BookingController extends Controller
 
         $booking->save();
 
-        return response(['message' => 'Approved Berhasil']);
+        return back()->with(['approved' => 'request list approved']);
     }
 
     public function rejected(Request $request, $id)
@@ -152,7 +152,7 @@ class BookingController extends Controller
         $booking = Booking::find($id);
 
         if(!$booking){
-            return response(['message' => 'data tidak ditemukan!']);
+            return back()->with(['invalid' => 'data tidak ada!']);
         }
 
         $booking->fill([
@@ -160,7 +160,7 @@ class BookingController extends Controller
         ]);
 
         $booking->save();
-        return response(['message' => 'Rejected Berhasil']);
+        return back()->with(['rejected' => 'request list rejected']);
     }
 
     /**
@@ -174,9 +174,9 @@ class BookingController extends Controller
         $booking = Booking::find($id);
         if($booking){
             $booking->delete();
-            return response(['message' => 'Booking berhasil dihapus!']);
+            return back()->with(['delete' => 'Request List berhasil didelete']);
         }else{
-            return response(['message' => 'Id Booking tidak ada!']);
+            return back();
         }
     }
 }
