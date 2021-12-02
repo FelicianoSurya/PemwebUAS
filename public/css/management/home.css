@@ -8,21 +8,38 @@
     -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
 }
 
-.card-title {
-    font-size: medium;
+.card-text {
+    font-size: 20px;
+    transition: 0.2s;
 }
 
 .card img {
     border-radius: 0.25rem;
 }
 
-.isihome .box-home a:hover{
-    color:black;
+.box-home a{
     text-decoration: none;
-    transition-duration: 2s ;
+    color: black;
 }
 
-.isihome .box-home a div:hover{
-    color:black;
-    transform : scale(1.1);
+.box-choices{
+    background-color: white;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    width: 100%;
+    padding: 50px;
+    border-radius: 25px;
+    transition: 0.2s;
+}
+
+.box-choices:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+@media(max-width:441px){
+    .box-choices{
+        padding: 30px;
+    }
 }

@@ -103,7 +103,7 @@
                 <p>{{ $fasility['description'] }}</p>
                 <input type="hidden" id="userID" value="{{ Auth()->user()->id }}">
                 <input type="hidden" id="fasilityID-1" value="{{ $fasility['id'] }}">    
-                <a href="#" id="btn-booked" class="btn btn-light">Booked</a>
+                <a href="#" id="btn-booked" class="btn btn-light">Book now!</a>
                 <button id="btn-fav-{{$fasility['id']}}" class="btn 
                     @php
                         $fav = 'no';

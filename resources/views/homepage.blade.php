@@ -154,9 +154,13 @@
             if(entry.isIntersecting){
                 console.log("entry.target");
                 headerStyle.classList.add("ournavbar-scrolled");
+                headerStyle.classList.remove("navbar-dark");
+                headerStyle.classList.add("navbar-light");
             }
             else{
                 headerStyle.classList.remove("ournavbar-scrolled");
+                headerStyle.classList.remove("navbar-light");
+                headerStyle.classList.add("navbar-dark");
             }
         })
     }, landingOptions);
