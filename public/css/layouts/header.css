@@ -46,6 +46,10 @@
     color: black;
 }
 
+.dropdown-toggle::after {
+    border-top:none;
+}
+
 #booking:hover{
     cursor: pointer;
 }

@@ -72,6 +72,7 @@
                 },
                 success : function(result){
                     $('#btn-fav-' + result.fasilityID).removeClass('btn-light').addClass('btn-danger');
+                    location.href();
                 }
             });
         });

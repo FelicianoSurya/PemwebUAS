@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function(){
     return view('homepage');
-})->name('homepage');
+})->name('homepage')->middleware('guest');
 
 Auth::routes();
 

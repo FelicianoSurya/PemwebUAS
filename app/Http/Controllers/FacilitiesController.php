@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Fasilities;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 
@@ -85,7 +86,9 @@ class FacilitiesController extends Controller
     public function show($id)
     {
         $fasility = Fasilities::where('fasilityID', $id)->first();
+        $favorites = Favorite::all();   
         return view('user.facilityDetail',[
+            'favorites' => $favorites,
             'fasility' => $fasility
         ]);
     }

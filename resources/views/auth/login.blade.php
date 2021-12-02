@@ -41,6 +41,13 @@
                                     </span>
                                 @enderror
                             </div>
+                            @if($errors->any())
+                                <div class="col-12">
+                                    @error('invalid')
+                                    <p class="text-danger fw-bolder">{{$errors->first()}}</p>
+                                    @enderror
+                                </div>
+                            @endif
                         </div>
 
                         <div class="form-group row mb-0">
@@ -49,13 +56,6 @@
                                     {{ __('Login') }}
                                 </button>
                             </div>
-                            @if($errors->any())
-                                <div class="col-12 d-flex justify-content-center pt-3">
-                                    @error('invalid')
-                                    <p class="text-danger fw-bolder">{{$errors->first()}}</p>
-                                    @enderror
-                                </div>
-                            @endif
                             <div class="col-md-12 d-flex text-center flex-column pt-3">
                                 <span>Don't have an acccount?</span>
                                 <span>

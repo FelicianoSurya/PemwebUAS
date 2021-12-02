@@ -95,14 +95,32 @@
     </div>
     <div class="backgroundDesc">
         <div class="isidetailF row px-3 justify-content-evenly mx-auto">
-            <div class="pictF col-lg-6 col-md-6 col-12 text-center p-5">
+            <div class="pictF col-lg-6 col-md-6 col-12 text-center p-lg-5 p-sm-2 p-3">
                 <img src="{{ asset('storage/Images/Fasilitas') . '/' . $fasility['image'] }}" width="90%" height="100%" alt="" class="rounded">
             </div>
-            <div class="textDetail col-lg-4 col-md-6 col-12 py-lg-5 ps-md-2 py-md-2 py-sm-1">
+            <div class="textDetail col-lg-4 col-md-6 col-12 py-lg-5 ps-md-2 py-md-2 py-sm-5 py-5">
                 <h1>{{ $fasility['fasilityName'] }}</h1>
                 <p>{{ $fasility['description'] }}</p>
+                <input type="hidden" id="userID" value="{{ Auth()->user()->id }}">
+                <input type="hidden" id="fasilityID-1" value="{{ $fasility['id'] }}">    
                 <a href="#" id="btn-booked" class="btn btn-light">Booked</a>
-                <a href="#" class="btn btn-light mx-2">Favorite &hearts;</a>
+                <button id="btn-fav-{{$fasility['id']}}" class="btn 
+                    @php
+                        $fav = 'no';
+                    @endphp
+                    @foreach($favorites as $favorite)
+                        @if($favorite['fasilityID'] == $fasility['id'] && $favorite['userID'] == Auth()->user()->id)
+                            @php
+                                $fav = $favorite['id'];
+                            @endphp
+                        @endif
+                    @endforeach
+                    @php
+                        if($fav == 'no') echo 'btn-light btn-favorite';
+                        else echo 'btn-danger btn-notFavorite';
+                    @endphp
+                    ">Favorite &hearts;</button>
+                    <input type="hidden" id="favoriteID" value="@php echo $fav @endphp">
             </div>
         </div>
     </div>
@@ -114,6 +132,39 @@
 @section('custom-js')
 <script>
     $(document).ready(function(){
+        $(".btn-favorite").click(function(e){
+            let userID = $(this).closest('.isidetailF').children('div').children('#userID').val();
+            let fasilityID = $(this).closest('.isidetailF').children('div').children('#fasilityID-1').val();
+            let _token   = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url : '{{ url('getFavorite') }}',
+                method : "POST",
+                data : {
+                    userID : userID,
+                    fasilityID : fasilityID,
+                    _token : _token
+                },
+                success : function(result){
+                    $('#btn-fav-' + result.fasilityID).removeClass('btn-light').removeClass('btn-favorite').addClass('btn-danger').addClass('btn-notFavorite');
+                    location.reload();
+                }
+            });
+        });
+        $('.btn-notFavorite').click(function(e){
+            let _token   = $('meta[name="csrf-token"]').attr('content');
+            let favoriteID = $(this).closest('.isidetailF').children('div').children('#favoriteID').val();
+            $.ajax({
+                url : "{{ url('home/favorite/')}}" + '/' + favoriteID,
+                method : 'DELETE',
+                data : {
+                    _token : _token
+                },
+                success : function(result){
+                    $('#btn-fav-' + result.id).removeClass('btn-danger').removeClass('btn-notFavorite').addClass('btn-light').addClass('btn-favorite');
+                    location.reload();
+                }
+            })
+        });
         $('#btn-booked').click(function(){
             $('#myModal').modal({
             keyboard: false,
