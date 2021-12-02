@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-<div class="container pt-5">
-    <div class="modal-dialog" style="width:100%;margin-top:50px">	
+<div class="container py-5 mt-5">
+    <div class="modal-dialog w-100 m-auto" >	
         <div class="modal-content p-4">
             <div class="modal-header">
-            <h4 class="modal-title" style="display:flex;justify-content:center; width:100%"><span style="margin-right:5px;color:#372074;">Booking</span><span class="ms-4" style="color:#FFB13E">Form</span></h4>
+            <h4 class="bookingForm-title modal-title" style="display:flex;justify-content:center; width:100%"><span style="margin-right:5px;color:#372074;">Booking</span><span class="ms-4" style="color:#FFB13E">Form</span></h4>
             </div>
             <div class="modal-body">
             <form method="POST" action="{{ route('bookingAdd') }}">

@@ -58,7 +58,7 @@
                             <td class="text-center align-middle">
                                 @if($booking['status'] == 'waiting')
                                     @if(Auth()->user()->role == 'user')
-                                    Waiting for Approved
+                                    Waiting for Approval
                                     @else
                                     Waiting
                                     @endif

@@ -1,6 +1,8 @@
 .ournavbar .nav-link{
     transition: 0.2s;
+    color: rgba(255, 255, 255, 1)!important;
 }
+
 
 .ournavbar .nav-link:after{
     content: '';
@@ -30,10 +32,12 @@
     font-weight: 700;
     font-size: 20px;
 }
+
 .ournavbar .navbar-brand{
     font-size: 30px;
-
+    color: white;
 }
+
 .ournavbar .navbar-brand span{
     color: #FFB13E;
 }
@@ -42,8 +46,13 @@
     transition: 0.2s;
 }
 
+.ournavbar-scrolled .nav-link{
+    color: black!important;
+}
+
 .ournavbar-scrolled .navbar-brand{
     color: black;
+    pointer-events: none;
 }
 
 .dropdown-toggle::after {

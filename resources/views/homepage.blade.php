@@ -41,7 +41,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 py-3 col-6 d-flex  align-items-center">
-                <img class="w-100"src="https://images.unsplash.com/photo-1638228626087-e7cc19d2ff9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                <img class="w-100" src="{{asset('images/landingpage/section-3.png')}}" alt="">
             </div>
             <div class="col-lg-6 col-12 text-lg-left d-flex flex-column justify-content-around container">
                 <h1 class="text-lg-left">About Us</h1>
@@ -66,19 +66,19 @@
         </div>
         <div class="row justify-content-sm-between justify-content-center">
             <div class=" col-lg-3 col-sm-4 col-8  d-flex text-center flex-column  align-items-center">
-                <img class="w-100 pb-3" src="https://images.unsplash.com/photo-1638228626094-20fbdb215149?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1184&q=80" alt="">
+                <img class="w-100 pb-3" src="{{asset('images/landingpage/folder.png')}}" alt="">
                 <h3>Untangle space usage</h3>
                 <p>Solve your space management problems forever by taking your booking processes online</p>
             </div>
             <div class="w-100 d-sm-none d-block"></div>
             <div class="col-lg-3 col-sm-4 col-8  d-flex text-center flex-column  align-items-center">
-                <img class="w-100 pb-3" src="https://images.unsplash.com/photo-1638228626094-20fbdb215149?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1184&q=80" alt="">
+                <img class="w-100 pb-3" src="{{asset('images/landingpage/money.png')}}" alt="">
                 <h3>Reduce administration</h3>
                 <p>Save time and money by automating previously time-consuming space management tasks.</p>
             </div>
             <div class="w-100 d-sm-none d-block"></div>
             <div class="col-lg-3 col-sm-4 col-8  d-flex text-center flex-column  align-items-center">
-                <img class="w-100 pb-3" src="https://images.unsplash.com/photo-1638228626094-20fbdb215149?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1184&q=80" alt="">
+                <img class="w-100 pb-3" src="{{asset('images/landingpage/setting.png')}}" alt="">
                 <h3>Implement quickly</h3>
                 <p>Getting up and running is easier than you think. Start seeing results in minutes.</p>
             </div>
