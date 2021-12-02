@@ -25,6 +25,7 @@ Route::get('/', function(){
 Auth::routes();
 
 Route::post('/regis',[RegisterController::class, 'register']);
+Route::get('/reloadCaptcha',[RegisterController::class, 'reloadCaptcha']);
 
 Route::group(['middleware' => 'auth'],function(){ 
     

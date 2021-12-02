@@ -17,7 +17,7 @@ class FacilitiesController extends Controller
      */
     public function index()
     {
-        $params = Fasilities::paginate(5);
+        $params = Fasilities::paginate(10);
         // return response($params);
         // return view('listFasilitas',[
         //     'Facilities' => $params

@@ -15,6 +15,10 @@
     -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
 }
 
+.box-facility{
+    min-height: 80vh;
+}
+
 .operation form button {
     border: none;
     background-color: transparent;
