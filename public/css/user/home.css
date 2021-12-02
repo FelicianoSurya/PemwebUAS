@@ -17,6 +17,11 @@
     -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
 }
 
+.card-title {
+    min-height: 6vh;
+    font-size: medium;
+}
+
 .card img {
     border-radius: 0.25rem;
 }

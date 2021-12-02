@@ -22,7 +22,7 @@
     <div class="col-lg-3 col-md-4 col-sm-6 my-3" id="box-fav-{{ $data['fasility']->id }}">
         <div class="card p-3">
             <img src="{{ asset('storage/Images/Fasilitas') .'/'. $data['fasility']->image }}" class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-body pb-0">
                 <h5 class="card-title">{{ $data['fasility']->fasilityName }}</h5>
                 <div class="btnCard row justify-content-between">
                     <input type="hidden" id="userID" value="{{ Auth()->user()->id }}">
