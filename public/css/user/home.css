@@ -34,3 +34,7 @@
     max-height: 2rem;
     min-width: 4rem;
 }
+
+.favlist {
+    min-height: 100vh;
+}

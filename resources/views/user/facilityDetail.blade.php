@@ -67,12 +67,12 @@
                 </div>
 
                 <div class="form-group modal-btn row justify-content-end align-items-end mb-0">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <button type="submit" class="btn btn-light px-4">
                             {{ __('Book') }}
                         </button>
                     </div>
-                    <div class="col-md-4 mx-2">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <button class="btn btn-danger" class="close" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>

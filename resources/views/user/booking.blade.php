@@ -76,7 +76,7 @@
                             {{ __('Book') }}
                         </button>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-6 mx-2">
+                    <div class="col-md-4 col-sm-4 col-6">
                         <a href="{{ route('home') }}"><button type="button" class="btn btn-danger">Cancel</button></a>
                     </div>
                 </div>
