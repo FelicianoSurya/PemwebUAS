@@ -73,7 +73,7 @@
             Swal.fire({
             icon: 'success',
             title: 'Success',
-            text: "User Berhasil Ditambahkan!", 
+            text: "Manager Berhasil Ditambahkan!", 
         });
     });
     @elseif($status = Session::get('delete'))
@@ -81,7 +81,7 @@
                 Swal.fire({
                 icon: 'success',
                 title: 'Delete',
-                text: "User Berhasil Dihapus!", 
+                text: "Manager Berhasil Dihapus!", 
             });
         });
     @endif
@@ -90,7 +90,7 @@
             Swal.fire({
             icon: 'success',
             title: 'Edit',
-            text: "User Berhasil Diedit!", 
+            text: "Manager Berhasil Diedit!", 
         });
     });
     @endif

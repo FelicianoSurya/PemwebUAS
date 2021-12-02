@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="container p-3 mt-5">
+<div class="container favlist p-3 mt-5">
     <div class="ataslist row justify-content-between pt-5">
         <div class="judul col-lg-6 col-md-6 col-12 row ">
             <span style="color: #372074;">Facilities</span>
