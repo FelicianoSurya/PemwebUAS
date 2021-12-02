@@ -1,0 +1,17 @@
+.isihome {
+    min-height: 100vh;
+}
+
+.card {
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+.card-title {
+    font-size: medium;
+}
+
+.card img {
+    border-radius: 0.25rem;
+}

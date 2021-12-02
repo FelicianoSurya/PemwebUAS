@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-<div class="container d-flex flex-column align-items-center justify-content-center">
+<div class="container tabelReq d-flex flex-column align-items-center justify-content-center">
         <table id="example" class="table table-striped " style="width:100%">
             <thead>
                 <tr class="text-center">
