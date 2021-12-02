@@ -13,9 +13,9 @@
             </div>
             <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
                 @if(Auth()->user()->role == 'admin')
-                    <a href="{{ url('admin/facilities/create') }}"><button type="button" class="btn btn-light px-4">Add</button></a>
+                    <a href="{{ url('admin/facilities/create') }}"><button type="button" class="btn btn-light px-4 ml-lg-0 ml-3">Add</button></a>
                 @elseif(Auth()->user()->role == 'management')
-                    <a href="{{ url('manager/facilities/create') }}"><button type="button" class="btn btn-light px-4">Add</button></a>
+                    <a href="{{ url('manager/facilities/create') }}"><button type="button" class="btn btn-light px-4 ml-lg-0 ml-3">Add</button></a>
                 @endif
             </div>
         </div>

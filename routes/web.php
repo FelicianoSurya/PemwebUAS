@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'],function(){
     });
     
     Route::group(['middleware' => 'admin'],function(){
-        Route::get('/adminHome',[HomeController::class, 'indexAdmin'])->name('homeAdmin');
+        Route::get('/adminHome',[HomeController::class, 'indexManagement'])->name('homeAdmin');
         Route::resource('management', UserController::class);
         Route::get('management/form/{id}', [UserController::class, 'edit']);
         Route::post('management/edit', [UserController::class, 'update']);

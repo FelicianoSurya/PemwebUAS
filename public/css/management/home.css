@@ -1,5 +1,5 @@
 .isihome {
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .card {
@@ -14,4 +14,15 @@
 
 .card img {
     border-radius: 0.25rem;
+}
+
+.isihome .box-home a:hover{
+    color:black;
+    text-decoration: none;
+    transition-duration: 2s ;
+}
+
+.isihome .box-home a div:hover{
+    color:black;
+    transform : scale(1.1);
 }

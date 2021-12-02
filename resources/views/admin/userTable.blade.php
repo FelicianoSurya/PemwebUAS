@@ -8,7 +8,7 @@
 <div class="container pt-5">
         <div class="ataslist row justify-content-between py-5">
             <div class="judul col-lg-6 col-md-6 col-12 row ">
-                <span style="color: #372074;">User</span>
+                <span style="color: #372074;">Manager</span>
                 <span style="color: #FFB13E;">Listing</span>
             </div>
             <div class="buttons col-lg-6 col-md-6 col-12 row justify-content-lg-end justify-content-md-end p-2">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-<div class="container d-flex align-items-center justify-content-center flex-column">
+<div class="container isi-manager-table d-flex align-items-center justify-content-center flex-column">
         <table id="example" class="table table-striped " style="width:100%">
             <thead>
                 <tr class="text-center">

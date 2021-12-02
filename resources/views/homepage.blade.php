@@ -44,14 +44,14 @@
                 <img class="w-100"src="https://images.unsplash.com/photo-1638228626087-e7cc19d2ff9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
             </div>
             <div class="col-lg-6 col-12 text-lg-left d-flex flex-column justify-content-around container">
-                <h1>About Us</h1>
-                <p>
+                <h1 class="text-lg-left">About Us</h1>
+                <p class="text-lg-left">
                     In 2021, we started building “Booking.” by 
                     focusing all our efforts on building the 
                     easiest,  most user-friendly, customizable 
                     space-booking facility available.
                 </p>
-                <p>A product we would use and one that 
+                <p class="text-lg-left">A product we would use and one that 
                     would cater to a wide range of user types.
                 </p>
             </div>
@@ -115,20 +115,20 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-8 p-2">
                 <div class="ourteam-card text-center">
-                    <h3>Feliciano</h3>
-                    <p class="m-0">( 000 000 43255 )</p>
+                    <h3>Fernando</h3>
+                    <p class="m-0">( 000 000 43088 )</p>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 col-8 p-2">
                 <div class="ourteam-card text-center">
-                    <h3>Feliciano</h3>
-                    <p class="m-0">( 000 000 43255 )</p>
+                    <h3>Dea</h3>
+                    <p class="m-0">( 000 000 42550 )</p>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 col-8 p-2">
                 <div class="ourteam-card text-center">
-                    <h3>Feliciano</h3>
-                    <p class="m-0">( 000 000 43255 )</p>
+                    <h3>Lifosmin</h3>
+                    <p class="m-0">( 000 000 45574 )</p>
                 </div>
             </div>
 
