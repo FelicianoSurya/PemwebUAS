@@ -55,8 +55,13 @@ html{
 }
 
 .section-2 span{
-    padding: 0 50px;
+    display: flex;
+    width: 100%;
+    /* margin: 0 150px; */
+    /* padding: 0 50px; */
     font-size: 32px;
+    margin: auto;
+    text-align: center;
 }
 
 .section-3{
@@ -66,10 +71,13 @@ html{
 
 .section-3 h1{
     font-size: 44px;
+    text-align: center;
 }
 
 .section-3 p{
     font-size: 18px;
+    text-align: center;
+
 }
 
 .section-4{
@@ -119,4 +127,121 @@ html{
 -webkit-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.36);
 -moz-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.36);
     padding: 20px;
+}
+
+@media(max-width:991px) {
+    .section-1 .white-bg{
+        width: 100%;
+        height: 30%;
+        position: absolute;
+        top: 70%;
+        left: 0;
+        background-color: white;
+        opacity: 0.9;
+    }
+
+    .section-1 .black-line-welcome-section{
+        margin-top: 40px;
+        width: 30%;
+        height: 2px;
+        background-color: black;
+        margin-bottom:50px;
+        text-align: center;
+    }
+    
+    .section-1 .left-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .section-1 .left-section .title-1{
+        color: #372074;
+        font-size: 68px;
+        font-weight: 700;
+        line-height: 70px;
+    }
+    .section-1 .left-section .title-2{
+        color: #CDB9FF;
+        font-size: 68px;
+        font-weight: 700;
+        line-height: 70px;
+
+    }
+    .section-1 .left-section .sub{
+        color: black;
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+@media(max-width:541px){
+    .section-1 .left-section .title-1{
+        color: #372074;
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 70px;
+    }
+    .section-1 .left-section .title-2{
+        color: #CDB9FF;
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 70px;
+
+    }
+    .section-1 .left-section .sub{
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .section-2 span{
+        font-size: 22px;
+
+    }
+
+    .section-3 h1{
+        font-size: 36px;
+    }
+    
+    .section-3 p{
+        font-size: 14px;
+        text-align: justify;
+    }
+    
+}
+
+@media(max-width:410px){
+    .section-1 .left-section .title-1{
+        color: #372074;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 70px;
+    }
+    .section-1 .left-section .title-2{
+        color: #CDB9FF;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 70px;
+
+    }
+
+}
+
+@media(max-width:340px){
+    .section-1 .left-section .title-1{
+        color: #372074;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 70px;
+    }
+    .section-1 .left-section .title-2{
+        color: #CDB9FF;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 70px;
+
+    }
+
 }
