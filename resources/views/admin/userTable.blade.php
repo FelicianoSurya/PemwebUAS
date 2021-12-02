@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-<div class="container d-flex align-items-center justify-content-center">
+<div class="container d-flex align-items-center justify-content-center flex-column">
         <table id="example" class="table table-striped " style="width:100%">
             <thead>
                 <tr class="text-center">
@@ -59,6 +59,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="col d-flex justify-content-center">
+            {{ $users->links("pagination::bootstrap-4") }}
+        </div>
 </div>
 
 @endsection

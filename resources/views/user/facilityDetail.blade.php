@@ -72,7 +72,7 @@
                             {{ __('Book') }}
                         </button>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mx-2">
                         <button class="btn btn-danger" class="close" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>

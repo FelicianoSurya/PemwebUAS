@@ -100,8 +100,8 @@
                         @endforeach
             </tbody>
         </table>
-        <div width="20%">
-            {{ $bookings->links() }}
+        <div class="col d-flex justify-content-center">
+            {{ $bookings->links("pagination::bootstrap-4") }}
         </div>
 </div>
 @endsection

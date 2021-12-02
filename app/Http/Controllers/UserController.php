@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $params = User::where('role','management')->get();
+        $params = User::where('role','management')->paginate(5);
         // return response($params);
         return view('admin.userTable',[
             'users' => $params,
