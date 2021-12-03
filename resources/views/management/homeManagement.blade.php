@@ -49,7 +49,7 @@
         @elseif(Auth()->user()->role == 'admin')
 
             <div class="col-lg-4 col-md-6 col-8  p-3">
-                <a href="{{ url('facilities') }}">
+                <a href="{{ url('management') }}">
                     <div class="box-choices">
                         <img src="{{asset('images/admin/user.png')}}" class="card-img-top w-100" alt="...">
                         <div class="card-body pt-3">
@@ -59,7 +59,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-6 col-8 p-3">
-                <a href="{{ url('manager/requestListing') }}">
+                <a href="{{ url('admin/facilities') }}">
                     <div class="box-choices">
                         <img src="{{asset('images/admin/application.png')}}" class="card-img-top w-100" alt="...">
                         <div class="card-body pt-3">
@@ -69,7 +69,7 @@
                 </a>   
             </div>
             <div class="col-lg-4 col-md-6 col-8 p-3">
-                <a href="{{ url('manager/requestListing') }}">
+                <a href="{{ url('admin/requestListing') }}">
                     <div class="box-choices">
                         <img src="{{asset('images/admin/request.png')}}" class="card-img-top w-100" alt="...">
                         <div class="card-body pt-3">
@@ -78,28 +78,6 @@
                     </div>
                 </a>   
             </div>
-
-            <!-- <a class="col-4" href="{{ url('management') }}"><div class="card mx-3 p-2">
-                <img src="{{asset('images/admin/user.png')}}" class="card-img-top w-100" alt="...">
-                <div class="card-body">
-                    <h3 class="card-text text-center">Users</h3>
-                </div>
-            </div></a>
-            <div class="w-100 d-md-none d-block"></div>
-            <a class="col-4" href="{{ url('admin/facilities') }}"><div class="card mx-3 p-2">
-                <img src="{{asset('images/admin/application.png')}}" class="card-img-top w-100" alt="...">
-                <div class="card-body">
-                    <h3 class="card-text text-center">Facilities</h3>
-                </div>
-            </div></a>
-            <div class="w-100 d-md-none d-block"></div>
-
-            <a class="col-4" href="{{ url('admin/requestListing') }}"><div class="card mx-3 p-2">
-                <img src="{{asset('images/admin/request.png')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h3 class="card-text text-center">Requests</h3>
-                </div>
-            </div></a> -->
         @endif
         </div>
     </div>

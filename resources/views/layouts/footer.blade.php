@@ -13,12 +13,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Our Team</a>
-                </li>
+                @if(Request::segment(1) === 'login' || Request::segment(1) === 'register')
+            
+                @else
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#aboutus">{{ __('About Us') }}</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#team">{{ __('Our Team ') }}</a>
+                    </li>
+                @endif
                     @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
