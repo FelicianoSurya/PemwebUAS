@@ -1,5 +1,5 @@
 .isi-manager-table{
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 .judul span {
@@ -16,7 +16,7 @@
 }
 
 .box-facility{
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 .operation form button {

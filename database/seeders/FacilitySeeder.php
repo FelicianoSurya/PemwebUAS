@@ -67,7 +67,7 @@ class FacilitySeeder extends Seeder
                 'fasilityID' => 'F09',
                 'fasilityName' => 'Indoor Basketball Room',
                 'description' => 'A basketball court has symmetry; one half of the court is a mirror image of the other. The entire basketball court (see Figure 1) is 94 feet by 50 feet. On each half-court, painted lines show the free throw lane and circle, as well as the three-point arc, whose distance from the basket varies based on the level of hoops being played.',
-                'image' => 'indoorRoom.png',
+                'image' => 'IndoorRoom.png',
             ],
             [
                 'fasilityID' => 'KG01',

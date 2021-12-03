@@ -10,7 +10,7 @@
         <div class="d-flex box-home row my-3 justify-content-center">
         @if(Auth()->user()->role == 'management')
         <div class="col-md-6 col-8 p-3">
-                <a href="{{ url('manager/requestListing') }}">
+                <a href="{{ url('manager/facilities') }}">
                     <div class="box-choices">
                         <img src="{{asset('images/admin/application.png')}}" class="card-img-top w-100" alt="...">
                         <div class="card-body pt-3">

@@ -70,13 +70,13 @@
                     </div>
                 </div>
 
-                <div class="form-group modal-btn row justify-content-end align-items-end mb-0">
-                    <div class="col-md-3 col-sm-4 col-6">
+                <div class="form-group modal-btn row justify-content-center align-items-end mb-0">
+                    <div class="col-md-4 col-sm-4 col-6 text-center">
                         <button type="submit" class="btn btn-light px-4">
                             {{ __('Book') }}
                         </button>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-6">
+                    <div class="col-md-4 col-sm-4 col-6 text-center">
                         <a href="{{ route('home') }}"><button type="button" class="btn btn-danger">Cancel</button></a>
                     </div>
                 </div>

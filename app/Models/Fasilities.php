@@ -13,6 +13,8 @@ class Fasilities extends Model
     protected $fillable = [
         'fasilityID',
         'fasilityName',
+        'openTime',
+        'closeTime',
         'description',
         'image'
     ];
