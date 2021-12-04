@@ -25,6 +25,10 @@ input[type="file"] {
     min-width: 30%;
 }
 
+.img-invalid .invalid-feedback{
+    display: inline;
+}
+
 @media (max-width: 768px) {
     .isilogin {
         min-width: 75%;

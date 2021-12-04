@@ -2,6 +2,11 @@
 
 @section('custom-css')
 <link rel="stylesheet" href="{{asset('css/user/detailFacility.css')}}">
+<style>
+    .invalid-feedback{
+        display:inline !important;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -25,6 +30,11 @@
                             <option value="{{ $fasility['id'] }}">{{ $fasility['fasilityName'] }}</option>
                             @endforeach
                         </select>
+                        @error('fasilityID')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
 
@@ -32,7 +42,7 @@
                     <label for="date" class="col-md-12 col-form-label">{{ __('Reservation Date') }}</label>
 
                     <div class="col-md-12">
-                        <input id="bookingDate" type="date" class="form-control @error('date') is-invalid @enderror" name="bookingDate" required>
+                        <input id="bookingDate" type="date" class="form-control @error('bookingDate') is-invalid @enderror" name="bookingDate">
 
                         @error('bookingDate')
                             <span class="invalid-feedback" role="alert">
@@ -46,7 +56,7 @@
                     <label for="start" class="col-md-12 col-form-label">{{ __('Start Time') }}</label>
 
                     <div class="col-md-12">
-                        <input id="startTime" type="time" class="form-control @error('startTime') is-invalid @enderror" name="startTime" required>
+                        <input id="startTime" type="time" class="form-control @error('startTime') is-invalid @enderror" name="startTime">
 
                         @error('startTime')
                             <span class="invalid-feedback" role="alert">
@@ -60,7 +70,7 @@
                     <label for="endTime" class="col-md-12 col-form-label">{{ __('End Time') }}</label>
 
                     <div class="col-md-12">
-                        <input id="endTime" type="time" class="form-control @error('date') is-invalid @enderror" name="endTime" required>
+                        <input id="endTime" type="time" class="form-control @error('endTime') is-invalid @enderror" name="endTime">
 
                         @error('endTime')
                             <span class="invalid-feedback" role="alert">

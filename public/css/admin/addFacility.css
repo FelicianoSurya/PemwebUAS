@@ -21,6 +21,10 @@ input[type="file"] {
     min-width: 30%;
 }
 
+.img-invalid .invalid-feedback{
+    display: inline;
+}
+
 @media (max-width: 768px) {
     .modal-dialog {
         min-width: 75%;

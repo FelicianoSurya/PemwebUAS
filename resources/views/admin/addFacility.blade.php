@@ -2,6 +2,11 @@
 
 @section('custom-css')
 <link rel="stylesheet" href="{{asset('css/admin/addFacility.css')}}">
+<style>
+    .invalid-feedback{
+        display:inline !important;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -24,7 +29,7 @@
                     <label for="fasilityID" class="col-md-12 col-form-label">{{ __('Fasility ID') }}</label>
 
                     <div class="col-md-12">
-                        <input id="fasilityID" type="text" class="form-control" name="fasilityID" required >
+                        <input id="fasilityID" type="text" class="form-control" name="fasilityID" >
                     </div>
 
                     @error('fasilityID')
@@ -38,9 +43,9 @@
                     <label for="name" class="col-md-12 col-form-label">{{ __('Name') }}</label>
 
                     <div class="col-md-12">
-                        <input id="name" type="text" class="form-control" name="fasilityName" required >
+                        <input id="name" type="text" class="form-control" name="fasilityName" >
                     </div>
-                    @error('fasilitiyName')
+                    @error('fasilityName')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -50,8 +55,8 @@
                 <div class="form-group row flex-column">
                     <label for="image" class="col-md-5 col-form-label">{{ __('Facility Picture') }}</label>
 
-                    <div class="col-md-12 row flex-column">
-                        <input class="form-control" type="file" placeholder="Facility Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="email" value="{{ old('image') }}" required />
+                    <div class="col-md-12 row flex-column img-invalid       ">
+                        <input type="file" placeholder="Facility Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="email" value="{{ old('image') }}" />
 
                         @error('image')
                             <span class="invalid-feedback" role="alert">
@@ -63,7 +68,7 @@
 
                 <div class="form-group row flex-column">
                     <label for="desc" class="col-md-5 col-form-label">{{ __('Description') }}</label>
-                    <textarea name="description" id="description" cols="30" rows="7" required placeholder="Description"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="7" placeholder="Description"></textarea>
                     
                     @error('description')
                         <span class="invalid-feedback" role="alert">

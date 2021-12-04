@@ -19,7 +19,7 @@
                     <label for="name" class="col-md-4 col-form-label">{{ __('Name') }}</label>
 
                     <div class="col-md-12">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
                     <label for="email" class="col-md-4 col-form-label">{{ __('Email') }}</label>
 
                     <div class="col-md-12">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -43,11 +43,11 @@
                     </div>
                 </div>
 
-                <div class="form-group row flex-column">
+                <div class="form-group row flex-column img-invalid">
                     <label for="image" class="col-md-5 col-form-label">{{ __('Profile Picture') }}</label>
 
                     <div class="col-md-12">
-                        <input class="form-control" type="file" placeholder="Profile Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="Profile Picture" value="{{ old('image') }}" />
+                        <input type="file" placeholder="Profile Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="Profile Picture" value="{{ old('image') }}" />
 
 
                         @error('image')
@@ -62,7 +62,7 @@
                     <label for="password" class="col-md-4 col-form-label">{{ __('Password') }}</label>
 
                     <div class="col-md-12">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -76,7 +76,7 @@
                     <label for="password-confirm" class="col-md-6 col-form-label">{{ __('Confirm Password') }}</label>
 
                     <div class="col-md-12">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                     </div>
                 </div>
 

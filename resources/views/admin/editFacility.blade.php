@@ -2,6 +2,11 @@
 
 @section('custom-css')
 <link rel="stylesheet" href="{{asset('css/admin/addFacility.css')}}">
+<style>
+    .invalid-feedback{
+        display:inline !important;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -38,7 +43,7 @@
                     <label for="name" class="col-md-12 col-form-label">{{ __('Name') }}</label>
 
                     <div class="col-md-12">
-                        <input id="name" type="text" class="form-control" name="fasilityName" value="{{ $fasility['fasilityName'] }}" required >
+                        <input id="name" type="text" class="form-control @error('fasilityName') is-invalid @enderror" name="fasilityName" value="{{ $fasility['fasilityName'] }}" >
                     </div>
                     @error('fasilityName')
                         <span class="invalid-feedback" role="alert">
@@ -50,8 +55,8 @@
                 <div class="form-group row flex-column">
                     <label for="image" class="col-md-5 col-form-label">{{ __('Facility Picture') }}</label>
 
-                    <div class="col-md-12 row flex-column">
-                        <input class="form-control" type="file" placeholder="Facility Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" value="{{ old('image') }}" />
+                    <div class="col-md-12 row flex-column img-invalid">
+                        <input type="file" placeholder="Facility Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" value="{{ old('image') }}" />
 
 
                         @error('image')
@@ -64,9 +69,9 @@
 
                 <div class="form-group row flex-column">
                     <label for="desc" class="col-md-5 col-form-label">{{ __('Description') }}</label>
-                    <textarea name="description" id="description" cols="30" rows="7" required placeholder="Description">{{ $fasility['description'] }}</textarea>
+                    <textarea name="description" id="description" cols="30" rows="7" class="form-control @error('description') is-invalid @enderror" placeholder="Description">{{ $fasility['description'] }}</textarea>
                     
-                    @error('desc')
+                    @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

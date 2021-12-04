@@ -19,8 +19,8 @@
                     <label for="email" class="col-md-4 col-form-label">{{ __('Email') }}</label>
 
                     <div class="col-md-12">
-                        <input id="email" disabled type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user['email'] }}" required>
-                        <input id="id" type="hidden" class="form-control @error('email') is-invalid @enderror" name="id" value="{{ $user['id'] }}" required>
+                        <input id="email" disabled type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user['email'] }}">
+                        <input id="id" type="hidden" class="form-control @error('email') is-invalid @enderror" name="id" value="{{ $user['id'] }}">
                         <input type="hidden" id="pass" name="pass" value="no">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
                     <label for="name" class="col-md-4 col-form-label">{{ __('Name') }}</label>
 
                     <div class="col-md-12">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user['name'] }}" required autocomplete="name" autofocus>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user['name'] }}" autocomplete="name" autofocus>
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
                     <label for="image" class="col-md-5 col-form-label">{{ __('Profile Picture') }}</label>
 
                     <div class="col-md-12">
-                        <input class="form-control" type="file" placeholder="Profile Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="Profile Picture" />
+                        <input type="file" placeholder="Profile Picture" id="image" name="image" class="form-control @error('image') is-invalid @enderror" name="Profile Picture" />
 
 
                         @error('image')
@@ -112,6 +112,7 @@
             }else{
                 $("#password").attr('disabled','disabled');
                 $("#password-confirm").attr('disabled','disabled');
+                $("#pass").val('no');
             }
         })
     });

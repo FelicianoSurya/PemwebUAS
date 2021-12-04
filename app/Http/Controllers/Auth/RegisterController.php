@@ -70,7 +70,7 @@ class RegisterController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|string|max:255|unique:users',
                 'password' => 'required|string|min:3|confirmed',
-                'image' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
+                'image' => 'required|mimes:jpg,jpeg,png,gif|max:2048|image',
                 'captcha' => 'required|captcha'
             ]);
         }else{
