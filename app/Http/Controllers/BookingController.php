@@ -63,7 +63,7 @@ class BookingController extends Controller
             return back()->withErrors($validate);
         }
 
-        $booking = Booking::all();
+        $booking = Booking::where('status','approved')->orWhere('status','waiting')->get();
 
         foreach($booking as $data){
             if($request->startTime > $request->endTime || $request->startTime == $request->endTime){
